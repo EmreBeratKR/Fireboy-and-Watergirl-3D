@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 public class SceneController : MonoBehaviour
 {
+    [SerializeField] private GameObject warningText;
+
+
     public void LoadLobby()
     {
         SceneManager.LoadScene(1);
@@ -12,9 +15,13 @@ public class SceneController : MonoBehaviour
 
     public void EnterGame()
     {
-        if (PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.PlayerList.Length == 2)
         {
             PhotonNetwork.LoadLevel(3); // Game Scene
+        }
+        else
+        {
+            warningText.SetActive(true);
         }
     }
 }

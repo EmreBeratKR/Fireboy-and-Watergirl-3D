@@ -8,8 +8,7 @@ using Photon.Realtime;
 
 public class CreateNJoinRoom : MonoBehaviourPunCallbacks
 {
-    public InputField createInput;
-    public InputField joinInput;
+    public InputField roomInput;
     public InputField nameInput;
     [SerializeField] Text warningText;
     [SerializeField, Range(10, 20)] private int maxLength;
@@ -23,11 +22,8 @@ public class CreateNJoinRoom : MonoBehaviourPunCallbacks
 
     private void setInputField()
     {
-        createInput.characterLimit = maxLength;
-        createInput.characterValidation = InputField.CharacterValidation.Alphanumeric;
-
-        joinInput.characterLimit = maxLength;
-        joinInput.characterValidation = InputField.CharacterValidation.Alphanumeric;
+        roomInput.characterLimit = maxLength;
+        roomInput.characterValidation = InputField.CharacterValidation.Alphanumeric;
 
         nameInput.characterLimit = maxLength;
         nameInput.characterValidation = InputField.CharacterValidation.Alphanumeric;
@@ -36,7 +32,7 @@ public class CreateNJoinRoom : MonoBehaviourPunCallbacks
 
     public void CreateRoom()
     {
-        string c = createInput.text;
+        string c = roomInput.text;
         string n = nameInput.text;
         if (n == "")
         {
@@ -44,7 +40,7 @@ public class CreateNJoinRoom : MonoBehaviourPunCallbacks
         }
         else if (c == "")
         {
-            warningText.text = "Please enter a Room Name to Create!";
+            warningText.text = "Please enter a Room Name to Host!";
         }
         else
         {
@@ -58,13 +54,13 @@ public class CreateNJoinRoom : MonoBehaviourPunCallbacks
         {
             warningText.text = "Please enter your Nickname!";
         }
-        else if (joinInput.text == "")
+        else if (roomInput.text == "")
         {
             warningText.text = "Please enter a Room Name to Join!";
         }
         else
         {
-            PhotonNetwork.JoinRoom(joinInput.text);
+            PhotonNetwork.JoinRoom(roomInput.text);
         }
     }
 
@@ -76,9 +72,7 @@ public class CreateNJoinRoom : MonoBehaviourPunCallbacks
 
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
-        warningText.text = $"Failed to Join ({joinInput.text})";
-        Debug.Log(message);
-        Debug.Log(returnCode);
+        warningText.text = $"Failed to Join ({roomInput.text})";
     }
 
     private void SetNickname()

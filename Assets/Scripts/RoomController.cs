@@ -7,6 +7,8 @@ using Photon.Realtime;
 
 public class RoomController : MonoBehaviourPunCallbacks
 {
+    [SerializeField] private SceneController sceneController;
+    [SerializeField] private GameObject startButton;
     [SerializeField] Text playerCounter;
     [SerializeField] Text roomName;
     [SerializeField] GameObject playerDisplay;
@@ -20,9 +22,23 @@ public class RoomController : MonoBehaviourPunCallbacks
 
     private void OnClientEnteredRoom()
     {
+        startButton.SetActive(PhotonNetwork.IsMasterClient);
+
+        PhotonNetwork.EnableCloseConnection = true;
         PhotonNetwork.AutomaticallySyncScene = true;
         roomName.text = PhotonNetwork.CurrentRoom.Name;
         StartCoroutine(UpdateTable(PhotonNetwork.LocalPlayer));
+    }
+
+    public void LeaveRoom()
+    {
+        PhotonNetwork.LeaveRoom();
+    }
+
+    public override void OnLeftRoom()
+    {
+        PhotonNetwork.LocalPlayer.NickName = "";
+        sceneController.LoadLobby();
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -64,6 +80,16 @@ public class RoomController : MonoBehaviourPunCallbacks
                     GameObject newDisplay = Instantiate(playerDisplay, Vector3.zero, Quaternion.identity, playerSlots.GetChild(i));
                     newDisplay.transform.localPosition = Vector3.zero;
                     newDisplay.transform.GetChild(0).GetComponent<Text>().text = players[i].NickName;
+
+                    newDisplay.GetComponent<ClientController>().owner = players[i];
+                    if (PhotonNetwork.IsMasterClient && !players[i].IsLocal)
+                    {
+                        newDisplay.transform.Find("Kick Button").gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        newDisplay.transform.Find("Kick Button").gameObject.SetActive(false);
+                    }
                 }
             }
             else
@@ -73,6 +99,16 @@ public class RoomController : MonoBehaviourPunCallbacks
                     GameObject newDisplay = Instantiate(playerDisplay, Vector3.zero, Quaternion.identity, playerSlots.GetChild(i));
                     newDisplay.transform.localPosition = Vector3.zero;
                     newDisplay.transform.GetChild(0).GetComponent<Text>().text = players[i].NickName;
+
+                    newDisplay.GetComponent<ClientController>().owner = players[i];
+                    if (PhotonNetwork.IsMasterClient && !players[i].IsLocal)
+                    {
+                        newDisplay.transform.Find("Kick Button").gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        newDisplay.transform.Find("Kick Button").gameObject.SetActive(false);
+                    }
                 }
             }
         }
