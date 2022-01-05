@@ -6,28 +6,40 @@ using Photon.Pun;
 public class PlayerMovement : MonoBehaviourPun
 {
     [SerializeField] private Rigidbody rb;
-    public const float maxSpeed = 30f;
+    [SerializeField] private KeyBinding keyBinding;
+    public const float maxSpeed = 35f;
 
 
     private void Update()
     {
         if (photonView.IsMine)
         {
-            if (Input.GetKey(KeyCode.D))
+            // move right
+            if (Input.GetKey(keyBinding.right[0]) || Input.GetKey(keyBinding.right[1]))
             {
                 if (!(Mathf.Abs(rb.velocity.x) > maxSpeed))
                 {
                     rb.AddForce(Vector3.right * 50f, ForceMode.Acceleration);
                 }
             }
-            if (Input.GetKey(KeyCode.A))
+            else if ((Input.GetKeyUp(keyBinding.right[0]) || Input.GetKeyUp(keyBinding.right[1])) && rb.velocity.x > 0)
+            {
+                rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+            }
+            // move left
+            if (Input.GetKey(keyBinding.left[0]) || Input.GetKey(keyBinding.left[1]))
             {
                 if (!(Mathf.Abs(rb.velocity.x) > maxSpeed))
                 {
                     rb.AddForce(Vector3.left * 50f, ForceMode.Acceleration);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.W))
+            else if ((Input.GetKeyUp(keyBinding.left[0]) || Input.GetKeyUp(keyBinding.left[1])) && rb.velocity.x < 0)
+            {
+                rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+            }
+            // jump
+            if (Input.GetKey(keyBinding.jump[0]) || Input.GetKey(keyBinding.jump[1]))
             {
                 rb.velocity = new Vector3(rb.velocity.x, 50f, 0f);
             }
@@ -52,4 +64,12 @@ public class PlayerMovement : MonoBehaviourPun
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
+}
+
+[System.Serializable]
+public struct KeyBinding
+{
+    public KeyCode[] right;
+    public KeyCode[] left;
+    public KeyCode[] jump;
 }

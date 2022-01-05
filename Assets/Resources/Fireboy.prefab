@@ -102,6 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 373610057260029698}
+  keyBinding:
+    right: 6400000013010000
+    left: 6100000014010000
+    jump: 7700000011010000
 --- !u!114 &6888911742595241687
 MonoBehaviour:
   m_ObjectHideFlags: 0
