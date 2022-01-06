@@ -15,7 +15,7 @@ public class SceneController : MonoBehaviour
 
     public void EnterGame()
     {
-        if (PhotonNetwork.PlayerList.Length == 2)
+        if (PhotonNetwork.PlayerList.Length == 1)
         {
             PhotonNetwork.LoadLevel(3); // Game Scene
         }
