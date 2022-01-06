@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8267039895043314732}
   - component: {fileID: 7206780280532623418}
-  - component: {fileID: 1973333835808790227}
+  - component: {fileID: 8515534675915517290}
   - component: {fileID: 373610057260029698}
   - component: {fileID: 3018737931988820822}
   - component: {fileID: 6888911742595241687}
+  - component: {fileID: 2876356533936217402}
   m_Layer: 3
   m_Name: Fireboy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,8 +61,8 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!65 &1973333835808790227
-BoxCollider:
+--- !u!136 &8515534675915517290
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -70,9 +71,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7.045396, y: 10.637959, z: 3.024242}
-  m_Center: {x: 0.016337872, y: 5.276469, z: -0.015570939}
+  m_Radius: 3.75
+  m_Height: 10.57042
+  m_Direction: 1
+  m_Center: {x: 0, y: 5.28521, z: 0}
 --- !u!54 &373610057260029698
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,6 +141,19 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &2876356533936217402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055063002594972128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496e87fb84f1e4fb6848f6445c80d504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetGem: 0
 --- !u!1001 &701821156977865940
 PrefabInstance:
   m_ObjectHideFlags: 0
