@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviourPun
                 rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
             }
             // jump
-            if (Input.GetKey(keyBinding.jump[0]) || Input.GetKey(keyBinding.jump[1]))
+            if (Input.GetKeyDown(keyBinding.jump[0]) || Input.GetKeyDown(keyBinding.jump[1]))
             {
                 rb.velocity = new Vector3(rb.velocity.x, 50f, 0f);
             }
@@ -51,11 +51,11 @@ public class PlayerMovement : MonoBehaviourPun
     private void UpdateFacing()
     {
         float velX = rb.velocity.x;
-        if (velX > 0.5f)
+        if (velX > 0.1f)
         {
             transform.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
-        else if (velX < -0.5f)
+        else if (velX < -0.1f)
         {
             transform.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
