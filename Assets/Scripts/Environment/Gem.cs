@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
 
-public class Gem : MonoBehaviour
+public class Gem : EventListener
 {
     public GemType type;
     [SerializeField, Min(0f)] private float duration;
@@ -12,8 +15,31 @@ public class Gem : MonoBehaviour
 
     private void Start()
     {
+        targetEvent = OnCollected;
         startPos = transform.localPosition;
         StartCoroutine(AnimationCo());
+    }
+
+    private void OnCollected(EventData obj)
+    {
+        if (obj.Code == EventCode._GEMCOLLECT_EVENTCODE)
+        {
+            object[] datas = (object[]) obj.CustomData;
+            int viewID = (int) datas[0];
+
+            if (viewID == photonView.ViewID)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    public void RaiseGemEvent()
+    {
+        object[] datas = new object[] {photonView.ViewID};
+        PhotonNetwork.RaiseEvent(EventCode._GEMCOLLECT_EVENTCODE, datas, RaiseEventOptions.Default, SendOptions.SendUnreliable);
+
+        Destroy(gameObject);
     }
 
     private IEnumerator AnimationCo()

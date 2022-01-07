@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
 
 public class Lever : Switch
 {
@@ -9,21 +12,55 @@ public class Lever : Switch
     private const float duration = 1f;
 
 
+    private void Start()
+    {
+        targetEvent = OnLeverEventReceived;
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isMoving)
+        if (Input.GetKeyDown(KeyCode.Space) && !isMoving && inRange)
         {
-            if (isOn)
+            Raise_LeverEvent();
+        }
+    }
+
+    private void OnLeverEventReceived(EventData obj)
+    {
+        if (obj.Code == EventCode._LEVER_EVENTCODE)
+        {
+            object[] datas = (object[]) obj.CustomData;
+            int viewID = (int) datas[0];
+            bool state = (bool) datas[1];
+
+            if (photonView.ViewID == viewID)
             {
-                StartCoroutine(Close());
-                return;
+                ToggleLever(state);
             }
+        }
+    }
+
+    private void Raise_LeverEvent()
+    {
+        object[] datas = new object[] {photonView.ViewID, isOn};
+        PhotonNetwork.RaiseEvent(EventCode._LEVER_EVENTCODE, datas, RaiseEventOptions.Default, SendOptions.SendUnreliable);
+
+        ToggleLever(isOn);
+    }
+
+    private void ToggleLever(bool currentState)
+    {
+        if (currentState)
+        {
+            StartCoroutine(Close());
+        }
+        else
+        {
             StartCoroutine(Open());
         }
     }
 
-
-    public IEnumerator Open()
+    private IEnumerator Open()
     {
         isMoving = true;
         lever.LeanRotateZ(60f, duration).setEaseOutSine();
@@ -32,7 +69,7 @@ public class Lever : Switch
         isMoving = false;
     }
 
-    public IEnumerator Close()
+    private IEnumerator Close()
     {
         isMoving = true;
         lever.LeanRotateZ(0f, duration).setEaseOutSine();

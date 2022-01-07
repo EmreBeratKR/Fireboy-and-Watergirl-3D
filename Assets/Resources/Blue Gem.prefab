@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7756691928178447853}
   - component: {fileID: 1211215603729077039}
   - component: {fileID: 2726336702563981067}
+  - component: {fileID: 1598746876577360077}
   m_Layer: 0
   m_Name: Blue Gem
   m_TagString: Gem
@@ -62,6 +63,28 @@ MonoBehaviour:
   type: 1
   duration: 0.75
   deltaY: 0.75
+--- !u!114 &1598746876577360077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984694460009877335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &8744815453317330565
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +146,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 6fbd645e9b071438594f82ee7e76b150, type: 3}
+  - {fileID: 2100000, guid: 21f8d6da9220f4953b0cb64f0eaaf85e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

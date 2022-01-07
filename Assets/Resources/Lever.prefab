@@ -176,9 +176,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3988980978564871979}
   - component: {fileID: 7381139999098886368}
+  - component: {fileID: 7193723034214942594}
+  - component: {fileID: 2496667170547184551}
   m_Layer: 0
   m_Name: Lever
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,8 +214,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64a4bd9135da4158b855019a29761f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inRange: 0
   isOn: 0
   lever: {fileID: 8664769213368461017}
+--- !u!65 &7193723034214942594
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4148969288453029827}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9302964, y: 3.4366055, z: 5.395444}
+  m_Center: {x: 0.031851053, y: 1.2183027, z: -0.015925884}
+--- !u!114 &2496667170547184551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4148969288453029827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4274221494439477530
 GameObject:
   m_ObjectHideFlags: 0

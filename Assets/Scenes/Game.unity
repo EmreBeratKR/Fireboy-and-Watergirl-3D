@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1961892706}
     m_Modifications:
+    - target: {fileID: 1598746876577360077, guid: d130fe633d8f84de689f8721d807e51a, type: 3}
+      propertyPath: sceneViewId
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6984694460009877335, guid: d130fe633d8f84de689f8721d807e51a, type: 3}
       propertyPath: m_Name
       value: Blue Gem (1)
@@ -192,6 +196,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1961892706}
     m_Modifications:
+    - target: {fileID: 1598746876577360077, guid: d130fe633d8f84de689f8721d807e51a, type: 3}
+      propertyPath: sceneViewId
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6984694460009877335, guid: d130fe633d8f84de689f8721d807e51a, type: 3}
       propertyPath: m_Name
       value: Blue Gem (2)
@@ -323,6 +331,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1961892706}
     m_Modifications:
+    - target: {fileID: 1598746876577360077, guid: d130fe633d8f84de689f8721d807e51a, type: 3}
+      propertyPath: sceneViewId
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6984694460009877335, guid: d130fe633d8f84de689f8721d807e51a, type: 3}
       propertyPath: m_Name
       value: Blue Gem
@@ -396,6 +408,10 @@ PrefabInstance:
     - target: {fileID: 1513768562521997514, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496667170547184551, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: sceneViewId
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
       propertyPath: m_RootOrder
@@ -520,6 +536,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1961892706}
     m_Modifications:
+    - target: {fileID: 1714757862212764963, guid: 26b6f1c9ef3344376abdc796934d7c68, type: 3}
+      propertyPath: sceneViewId
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6438737981793305804, guid: 26b6f1c9ef3344376abdc796934d7c68, type: 3}
       propertyPath: m_Name
       value: Red Gem (1)
@@ -690,6 +710,96 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1166615115
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1441107331}
+    m_Modifications:
+    - target: {fileID: 1513768562521997514, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513768562521997514, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513768562521997514, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496667170547184551, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.0771
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.0771
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.0771
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -102.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -32.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148969288453029827, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_Name
+      value: Lever (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+--- !u!4 &1166615116 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3988980978564871979, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+  m_PrefabInstance: {fileID: 1166615115}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1350470485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -697,6 +807,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1961892706}
     m_Modifications:
+    - target: {fileID: 1714757862212764963, guid: 26b6f1c9ef3344376abdc796934d7c68, type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6438737981793305804, guid: 26b6f1c9ef3344376abdc796934d7c68, type: 3}
       propertyPath: m_Name
       value: Red Gem
@@ -781,6 +895,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 333977528}
+  - {fileID: 1166615116}
   m_Father: {fileID: 1557655054}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -989,6 +1104,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1961892706}
     m_Modifications:
+    - target: {fileID: 1714757862212764963, guid: 26b6f1c9ef3344376abdc796934d7c68, type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6438737981793305804, guid: 26b6f1c9ef3344376abdc796934d7c68, type: 3}
       propertyPath: m_Name
       value: Red Gem (2)

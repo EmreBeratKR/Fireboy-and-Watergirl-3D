@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviourPun
     {
         if (Input.GetKeyDown(keyBinding.jump[0]) || Input.GetKeyDown(keyBinding.jump[1]))
         {
-            if (groundChecker.isGrounded())
+            if (groundChecker.isGrounded() || true)
             {
                 rb.velocity = new Vector3(rb.velocity.x, 50f, 0f);
             }
