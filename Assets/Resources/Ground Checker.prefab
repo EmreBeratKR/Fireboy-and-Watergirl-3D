@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8849963245683246360}
   - component: {fileID: 3928136675035887343}
   - component: {fileID: 1211811254518137552}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Ground Checker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,6 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
-  isGrounded: 0
 --- !u!65 &1211811254518137552
 BoxCollider:
   m_ObjectHideFlags: 0
