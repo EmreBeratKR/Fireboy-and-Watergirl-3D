@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Lift : MonoBehaviour
 {
+    [SerializeField] private Rigidbody rb;
     [SerializeField] private Switch[] switches;
     [SerializeField] private SwitchMode mode;
     [SerializeField] private Transform lift;
-    [SerializeField] private Transform start;
-    [SerializeField] private Transform end;
+    [SerializeField] private Transform target;
     [SerializeField] private float speed;
     private float progress = 0;
 
@@ -24,7 +24,8 @@ public class Lift : MonoBehaviour
         {
             progress = 0;
         }
-        lift.localPosition = Vector3.Lerp(start.localPosition, end.localPosition, progress);
+        rb.MovePosition(Vector3.Lerp(transform.position, target.position, progress));
+        //lift.localPosition = Vector3.Lerp(transform.position, target.position, progress);
     }
 
     private bool State()

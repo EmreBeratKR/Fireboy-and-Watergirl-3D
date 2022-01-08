@@ -282,17 +282,21 @@ PrefabInstance:
       propertyPath: switches.Array.data[1]
       value: 
       objectReference: {fileID: 1918463580}
+    - target: {fileID: 6038549041448083215, guid: cf97f324c1716418dab097d3c829462a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.93
+      objectReference: {fileID: 0}
     - target: {fileID: 6697004961644599692, guid: cf97f324c1716418dab097d3c829462a, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6697004961644599692, guid: cf97f324c1716418dab097d3c829462a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.92
+      value: 0.905
       objectReference: {fileID: 0}
     - target: {fileID: 6697004961644599692, guid: cf97f324c1716418dab097d3c829462a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 98.12
+      value: 98.16
       objectReference: {fileID: 0}
     - target: {fileID: 6697004961644599692, guid: cf97f324c1716418dab097d3c829462a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -333,6 +337,10 @@ PrefabInstance:
     - target: {fileID: 6959090448045873320, guid: cf97f324c1716418dab097d3c829462a, type: 3}
       propertyPath: m_Name
       value: Lift (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600805632112052296, guid: cf97f324c1716418dab097d3c829462a, type: 3}
+      propertyPath: m_Constraints
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 8095490704285251951, guid: cf97f324c1716418dab097d3c829462a, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1104,9 +1112,17 @@ PrefabInstance:
       propertyPath: switches.Array.data[0]
       value: 
       objectReference: {fileID: 333977529}
+    - target: {fileID: 6038549041448083215, guid: cf97f324c1716418dab097d3c829462a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -15.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6697004961644599692, guid: cf97f324c1716418dab097d3c829462a, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697004961644599692, guid: cf97f324c1716418dab097d3c829462a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.91343755
       objectReference: {fileID: 0}
     - target: {fileID: 6697004961644599692, guid: cf97f324c1716418dab097d3c829462a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1151,6 +1167,10 @@ PrefabInstance:
     - target: {fileID: 6959090448045873320, guid: cf97f324c1716418dab097d3c829462a, type: 3}
       propertyPath: m_Name
       value: Lift
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600805632112052296, guid: cf97f324c1716418dab097d3c829462a, type: 3}
+      propertyPath: m_Constraints
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 8095490704285251951, guid: cf97f324c1716418dab097d3c829462a, type: 3}
       propertyPath: m_Materials.Array.data[0]
