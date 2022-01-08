@@ -21,6 +21,7 @@ public class EventListener : MonoBehaviourPun
 
     private void OnEventReceived(EventData obj)
     {
+        if (targetEvent == null) return;
         targetEvent(obj);
     }
 }

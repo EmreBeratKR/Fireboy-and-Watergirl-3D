@@ -103,8 +103,8 @@ GameObject:
   - component: {fileID: 870710959517521773}
   - component: {fileID: 1857776436165944022}
   - component: {fileID: 1274229814196533740}
-  - component: {fileID: 3179194772200883531}
   - component: {fileID: 6080501357331332306}
+  - component: {fileID: 8332520077864359900}
   m_Layer: 3
   m_Name: Watergirl
   m_TagString: Player
@@ -147,8 +147,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents:
-  - {fileID: 3179194772200883531}
+  ObservedComponents: []
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -159,7 +158,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8661786921748724806}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9e0dec9dd34dd4920a991482ceb63ca9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -200,39 +199,7 @@ MonoBehaviour:
     right: 6400000013010000
     left: 6100000014010000
     jump: 7700000011010000
---- !u!114 &3179194772200883531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8661786921748724806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 1
-    TeleportEnabled: 0
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 3
-    InterpolateMoveTowardsSpeed: 180
-    InterpolateLerpSpeed: 1
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 1
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
+  debugMode: 0
 --- !u!114 &6080501357331332306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +213,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetGem: 1
+--- !u!114 &8332520077864359900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661786921748724806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb495471f577e4c7bb1c6266bbc9404e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityScale: 15
 --- !u!1001 &1684607219975088902
 PrefabInstance:
   m_ObjectHideFlags: 0
