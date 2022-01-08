@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6038549041448083215}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7600805632112052296}
   m_Layer: 6
   m_Name: Lift Object
-  m_TagString: Untagged
+  m_TagString: Lift
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6697004961644599692}
   - component: {fileID: 3887539692574179045}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lift
   m_TagString: Untagged
   m_Icon: {fileID: 0}

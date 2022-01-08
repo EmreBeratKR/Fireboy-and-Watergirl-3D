@@ -199,6 +199,7 @@ MonoBehaviour:
     right: 6400000013010000
     left: 6100000014010000
     jump: 7700000011010000
+  isLifted: 0
   debugMode: 0
 --- !u!114 &6080501357331332306
 MonoBehaviour:
@@ -212,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496e87fb84f1e4fb6848f6445c80d504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1274229814196533740}
   targetGem: 1
 --- !u!114 &8332520077864359900
 MonoBehaviour:

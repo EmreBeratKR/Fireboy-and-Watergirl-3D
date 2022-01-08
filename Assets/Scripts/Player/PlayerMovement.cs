@@ -21,6 +21,7 @@ public class PlayerMovement : EventListener
     private const float slidingTreshhold = 1.5f;
     private const float teleportTreshhold = 3f;
     private const float facingDuration = 0.5f;
+    public bool isLifted;
     public bool debugMode; // for debugging
 
 
@@ -72,7 +73,7 @@ public class PlayerMovement : EventListener
         TryJump();
         if (!isRight && !isLeft)
         {
-            if (Mathf.Abs(rb.velocity.y) <= slidingTreshhold || !groundChecker.isGrounded())
+            if (Mathf.Abs(rb.velocity.y) <= slidingTreshhold || !groundChecker.isGrounded() || isLifted)
             {
                 rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
             }

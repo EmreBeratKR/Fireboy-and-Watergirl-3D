@@ -5,6 +5,7 @@ using Photon.Pun;
 
 public class CollisionController : MonoBehaviourPun
 {
+    [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private GemType targetGem;
 
 
@@ -37,6 +38,28 @@ public class CollisionController : MonoBehaviourPun
             if (photonView.IsMine)
             {
                 other.GetComponent<Switch>().inRange = false;
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (photonView.IsMine)
+        {
+            if (other.gameObject.tag == "Lift")
+            {
+                playerMovement.isLifted = true;
+            }
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (photonView.IsMine)
+        {
+            if (other.gameObject.tag == "Lift")
+            {
+                playerMovement.isLifted = false;
             }
         }
     }
