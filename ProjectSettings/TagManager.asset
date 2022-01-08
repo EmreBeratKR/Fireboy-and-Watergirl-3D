@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Gem
   - Switch
+  - Lift
+  - Water
+  - Lava
+  - Acid
   layers:
   - Default
   - TransparentFX
