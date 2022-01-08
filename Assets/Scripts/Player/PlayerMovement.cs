@@ -65,7 +65,7 @@ public class PlayerMovement : EventListener
         {
             rb.velocity = new Vector3(maxSpeed, rb.velocity.y, 0f);
         }
-        if (isLeft)
+        else if (isLeft)
         {
             rb.velocity = new Vector3(-maxSpeed, rb.velocity.y, 0f);
         }
