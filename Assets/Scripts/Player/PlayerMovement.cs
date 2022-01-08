@@ -11,6 +11,7 @@ public class PlayerMovement : EventListener
     [SerializeField] private Transform model;
     [SerializeField] private GroundChecker groundChecker;
     [SerializeField] private KeyBinding keyBinding;
+    private Facing facing = Facing.Forward;
     private bool isRight = false;
     private bool isLeft = false;
     private bool isJump = false;
@@ -19,6 +20,7 @@ public class PlayerMovement : EventListener
     private const float moveTreshhold = 1f;
     private const float slidingTreshhold = 1.5f;
     private const float teleportTreshhold = 3f;
+    private const float facingDuration = 0.5f;
     public bool debugMode; // for debugging
 
 
@@ -78,17 +80,19 @@ public class PlayerMovement : EventListener
     }
     private void UpdateFacing()
     {
-        float velX = rb.velocity.x;
-        if (velX > moveTreshhold)
+        if (isRight)
         {
+            facing = Facing.Right;
             model.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
-        else if (velX < -moveTreshhold)
+        else if (isLeft)
         {
+            facing = Facing.Left;
             model.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
-        else
+        else if (!isRight && !isLeft)
         {
+            facing = Facing.Left;
             model.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
@@ -123,6 +127,8 @@ public class PlayerMovement : EventListener
         PhotonNetwork.RaiseEvent(EventCode._MOVEINPUT_EVENTCODE, datas, RaiseEventOptions.Default, SendOptions.SendUnreliable);
     }
 }
+
+public enum Facing {Forward, Right, Left}
 
 [System.Serializable]
 public struct KeyBinding
