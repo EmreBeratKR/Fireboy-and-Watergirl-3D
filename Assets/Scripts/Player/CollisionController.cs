@@ -2,15 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
 
-public class CollisionController : MonoBehaviourPun
+public class CollisionController : EventListener
 {
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Element element;
 
 
+    private void Start()
+    {
+        targetEvent = OnGameoverEvent;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        CheckGameover(other.gameObject);
+
         if (other.tag == "Gem")
         {
             if (photonView.IsMine)
@@ -72,5 +81,44 @@ public class CollisionController : MonoBehaviourPun
         {
             playerMovement.isLifted = false;
         }
+    }
+
+    private void CheckGameover(GameObject other)
+    {
+        if (photonView.IsMine)
+        {
+            switch (other.tag)
+            {
+                case "Water":
+                    if (element == Element.Fire) Raise_GameoverEvent();
+                    break;
+                case "Lava":
+                    if (element == Element.Water) Raise_GameoverEvent();
+                    break;
+                case "Acid":
+                    Raise_GameoverEvent();
+                    break;
+            }
+        }
+    }
+
+    private void OnGameoverEvent(EventData obj)
+    {
+        if (obj.Code == EventCode._GAMEOVER_EVENTCODE)
+        {
+            Gameover();
+        }
+    }
+
+    public void Raise_GameoverEvent()
+    {
+        PhotonNetwork.RaiseEvent(EventCode._GAMEOVER_EVENTCODE, null, RaiseEventOptions.Default, SendOptions.SendUnreliable);
+
+        Gameover();
+    }
+
+    private void Gameover()
+    {
+        Debug.LogError("Berkay Gameover!!!");
     }
 }

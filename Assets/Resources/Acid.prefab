@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2971194361796883887}
   m_Layer: 0
   m_Name: Wave Models
-  m_TagString: Water
+  m_TagString: Acid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,8 +47,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5104677, y: 0.071743146, z: 1}
-  m_Center: {x: -0.06256542, y: -0.031681098, z: 0}
+  m_Size: {x: 0.5104677, y: 0.071743146, z: 0.19391674}
+  m_Center: {x: -0.062565416, y: -0.031681098, z: 0}
 --- !u!1 &6720153111014179854
 GameObject:
   m_ObjectHideFlags: 0
