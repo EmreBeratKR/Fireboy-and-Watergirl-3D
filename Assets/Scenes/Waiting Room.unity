@@ -1586,7 +1586,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1186793796}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: EnterGame
+        m_MethodName: LoadLevelSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

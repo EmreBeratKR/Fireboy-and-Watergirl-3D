@@ -9,11 +9,13 @@ public class CollisionController : EventListener
 {
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Element element;
+    private SceneController sceneController;
 
 
     private void Start()
     {
         targetEvent = OnGameoverEvent;
+        sceneController = FindObjectOfType<SceneController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -106,19 +108,27 @@ public class CollisionController : EventListener
     {
         if (obj.Code == EventCode._GAMEOVER_EVENTCODE)
         {
-            Gameover();
+            object[] datas = (object[]) obj.CustomData;
+            int viewID = (int) datas[0];
+
+            Gameover(viewID);
         }
     }
 
     public void Raise_GameoverEvent()
     {
-        PhotonNetwork.RaiseEvent(EventCode._GAMEOVER_EVENTCODE, null, RaiseEventOptions.Default, SendOptions.SendUnreliable);
+        object[] datas = new object[] {photonView.ViewID};
+        PhotonNetwork.RaiseEvent(EventCode._GAMEOVER_EVENTCODE, datas, RaiseEventOptions.Default, SendOptions.SendUnreliable);
 
-        Gameover();
+        Gameover(photonView.ViewID);
     }
 
-    private void Gameover()
+    private void Gameover(int id)
     {
-        Debug.LogError("Berkay Gameover!!!");
+        if (id == photonView.ViewID)
+        {
+            sceneController.Open_GameoverScreen();
+            Destroy(gameObject);
+        }
     }
 }
