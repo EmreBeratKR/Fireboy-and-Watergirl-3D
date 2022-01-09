@@ -110,7 +110,7 @@ public class PlayerMovement : EventListener
                 bool _isJump = (bool) datas[2];
                 Vector2 pos = new Vector2((float) datas[3], (float) datas[4]);
 
-                if (Mathf.Abs(pos.x - transform.position.x) > teleportTreshhold || (!_isRight && !_isLeft && !_isJump && groundChecker.isGrounded()))
+                if (Mathf.Abs(pos.x - transform.position.x) > teleportTreshhold || (!_isRight && !_isLeft && !_isJump && groundChecker.isGrounded() && !isLifted))
                 {
                     rb.MovePosition(pos);
                 }
