@@ -6,7 +6,7 @@ using Photon.Pun;
 public class CollisionController : MonoBehaviourPun
 {
     [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private GemType targetGem;
+    [SerializeField] private Element element;
 
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +16,7 @@ public class CollisionController : MonoBehaviourPun
             if (photonView.IsMine)
             {
                 Gem gem = other.GetComponent<Gem>();
-                if (gem.type == targetGem)
+                if (gem.element == element)
                 {
                     gem.RaiseGemEvent();
                 }
@@ -29,6 +29,14 @@ public class CollisionController : MonoBehaviourPun
                 other.GetComponent<Switch>().inRange = true;
             }
         }
+        else if (other.tag == "Door")
+        {
+            Door door = other.GetComponent<Door>();
+            if (element == door.element)
+            {
+                door.Raise_DoorEvent(true);
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -38,6 +46,14 @@ public class CollisionController : MonoBehaviourPun
             if (photonView.IsMine)
             {
                 other.GetComponent<Switch>().inRange = false;
+            }
+        }
+        else if (other.tag == "Door")
+        {
+            Door door = other.GetComponent<Door>();
+            if (element == door.element)
+            {
+                door.Raise_DoorEvent(false);
             }
         }
     }

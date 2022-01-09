@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1274229814196533740}
-  targetGem: 1
+  element: 1
 --- !u!114 &8332520077864359900
 MonoBehaviour:
   m_ObjectHideFlags: 0

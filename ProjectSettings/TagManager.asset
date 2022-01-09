@@ -10,6 +10,7 @@ TagManager:
   - Water
   - Lava
   - Acid
+  - Door
   layers:
   - Default
   - TransparentFX

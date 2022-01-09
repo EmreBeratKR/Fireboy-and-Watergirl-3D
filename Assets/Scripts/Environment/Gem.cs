@@ -7,7 +7,7 @@ using ExitGames.Client.Photon;
 
 public class Gem : EventListener
 {
-    public GemType type;
+    public Element element;
     [SerializeField, Min(0f)] private float duration;
     [SerializeField, Min(0f)] private float deltaY;
     private Vector3 startPos;
@@ -69,4 +69,4 @@ public class Gem : EventListener
     }
 }
 
-public enum GemType {Fire, Water}
+public enum Element {Fire, Water}

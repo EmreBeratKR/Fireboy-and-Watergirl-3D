@@ -19,7 +19,8 @@ public class PlayerMovement : EventListener
     private const float jumpSpeed = 75f;
     private const float moveTreshhold = 1f;
     private const float slidingTreshhold = 1.5f;
-    private const float teleportTreshhold = 3f;
+    private const float teleportTreshhold_X = 3f;
+    private const float teleportTreshhold_Y = 35f;
     private const float facingDuration = 0.5f;
     public bool isLifted;
     public bool debugMode; // for debugging
@@ -110,7 +111,8 @@ public class PlayerMovement : EventListener
                 bool _isJump = (bool) datas[2];
                 Vector2 pos = new Vector2((float) datas[3], (float) datas[4]);
 
-                if (Mathf.Abs(pos.x - transform.position.x) > teleportTreshhold || (!_isRight && !_isLeft && !_isJump && groundChecker.isGrounded() && !isLifted))
+                if (Mathf.Abs(pos.x - transform.position.x) > teleportTreshhold_X || Mathf.Abs(pos.y - transform.position.y) > teleportTreshhold_Y ||
+                    (!_isRight && !_isLeft && !_isJump && groundChecker.isGrounded() && !isLifted))
                 {
                     rb.MovePosition(pos);
                 }

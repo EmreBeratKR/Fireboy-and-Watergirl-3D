@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360ea3e15dc22408ab6c2e6c7d1f172e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  element: 1
   duration: 0.75
   deltaY: 0.75
 --- !u!114 &1598746876577360077
