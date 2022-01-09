@@ -11,21 +11,25 @@ public class Lift : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private float speed;
     private float progress = 0;
+    public bool isLocked;
+    public bool safeDirection;
 
 
     private void FixedUpdate()
     {
-        progress += (State() ? 1 : -1) * Time.fixedDeltaTime * speed;
-        if (progress > 1)
+        if (!isLocked || (State() == safeDirection))
         {
-            progress = 1;
+            progress += (State() ? 1 : -1) * Time.fixedDeltaTime * speed;
+            if (progress > 1)
+            {
+                progress = 1;
+            }
+            else if (progress < 0)
+            {
+                progress = 0;
+            }
+            rb.MovePosition(Vector3.Lerp(transform.position, target.position, progress));
         }
-        else if (progress < 0)
-        {
-            progress = 0;
-        }
-        rb.MovePosition(Vector3.Lerp(transform.position, target.position, progress));
-        //lift.localPosition = Vector3.Lerp(transform.position, target.position, progress);
     }
 
     private bool State()
