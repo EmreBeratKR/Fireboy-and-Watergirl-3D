@@ -34,9 +34,17 @@ public class SceneController : MonoBehaviour
         PhotonNetwork.LoadLevel(levelNumber+levelDelta);
     }
 
+    public void Restart_Level()
+    {
+        PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void Toggle_PauseMenu(bool isOpen)
     {
-        pauseMenu.SetActive(isOpen);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            pauseMenu.SetActive(isOpen);
+        }
     }
 
     public void Open_GameoverScreen()
