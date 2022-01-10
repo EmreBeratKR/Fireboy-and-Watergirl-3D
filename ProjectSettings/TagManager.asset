@@ -12,6 +12,7 @@ TagManager:
   - Acid
   - Door
   - Box
+  - Spawner
   layers:
   - Default
   - TransparentFX

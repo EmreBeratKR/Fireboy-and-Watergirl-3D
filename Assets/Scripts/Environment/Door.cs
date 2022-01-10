@@ -11,6 +11,7 @@ public class Door : EventListener
     [SerializeField] private Transform target;
     [SerializeField] private float speed;
     public Element element;
+    public bool isOpen;
     private float progress = 0f;
     private bool inRange = false;
 
@@ -22,10 +23,12 @@ public class Door : EventListener
 
     private void FixedUpdate()
     {
+        isOpen = false;
         progress += (inRange ? 1 : -1) * Time.fixedDeltaTime * speed;
         if (progress > 1)
         {
             progress = 1;
+            isOpen = true;
         }
         else if (progress < 0)
         {

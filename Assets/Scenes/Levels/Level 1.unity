@@ -761,6 +761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 752769849}
+  - component: {fileID: 752769850}
   m_Layer: 0
   m_Name: Doors
   m_TagString: Untagged
@@ -785,6 +786,22 @@ Transform:
   m_Father: {fileID: 1557655054}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &752769850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752769848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774c20d87d0814431a729588bc7b4f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneController: {fileID: 3388254980818006279}
+  doors:
+  - {fileID: 929357879}
+  - {fileID: 967306085}
 --- !u!1 &891339138
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +814,7 @@ GameObject:
   - component: {fileID: 891339139}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -817,6 +834,8 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 930430900}
   - {fileID: 2127525624}
+  me: {fileID: 0}
+  other: {fileID: 0}
 --- !u!4 &891339140
 Transform:
   m_ObjectHideFlags: 0
@@ -974,6 +993,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4177718534130842685, guid: 4acaf4b26674b48e5852a0322c2ae35e, type: 3}
   m_PrefabInstance: {fileID: 929357877}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &929357879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 556757190131474166, guid: 4acaf4b26674b48e5852a0322c2ae35e, type: 3}
+  m_PrefabInstance: {fileID: 929357877}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1079d36ed7e22495fbf1dd234da4685e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &930430899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1181,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4177718534130842685, guid: 4cecc05bc0be14de28a16e0ccbcea366, type: 3}
   m_PrefabInstance: {fileID: 967306083}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &967306085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 556757190131474166, guid: 4cecc05bc0be14de28a16e0ccbcea366, type: 3}
+  m_PrefabInstance: {fileID: 967306083}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1079d36ed7e22495fbf1dd234da4685e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!21 &998836198
 Material:
   serializedVersion: 6
@@ -2267,6 +2308,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: expectations.time
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: expectations.fireGem
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: expectations.waterGem
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3388254981750782715, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2357,6 +2410,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+--- !u!114 &3388254980818006279 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+  m_PrefabInstance: {fileID: 3388254980818006278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e8156f4c1094758960b50e2bd4bb6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3685500041313682768
 Transform:
   m_ObjectHideFlags: 0

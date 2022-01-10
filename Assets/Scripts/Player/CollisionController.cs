@@ -8,8 +8,9 @@ using ExitGames.Client.Photon;
 public class CollisionController : EventListener
 {
     [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private Element element;
+    [SerializeField] private PlayerStats stats;
     private SceneController sceneController;
+    public Element element;
 
 
     private void Start()
@@ -29,6 +30,7 @@ public class CollisionController : EventListener
                 Gem gem = other.GetComponent<Gem>();
                 if (gem.element == element)
                 {
+                    stats.collectedGems++;
                     gem.RaiseGemEvent();
                 }
             }

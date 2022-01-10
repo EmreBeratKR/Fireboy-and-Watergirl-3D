@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 3018737931988820822}
   - component: {fileID: 2876356533936217402}
   - component: {fileID: 759441924588524803}
+  - component: {fileID: -2846131913295069889}
   m_Layer: 3
   m_Name: Fireboy
   m_TagString: Player
@@ -201,6 +202,7 @@ MonoBehaviour:
     left: 6100000014010000
     jump: 7700000011010000
   isLifted: 0
+  isLocked: 0
   debugMode: 0
 --- !u!114 &2876356533936217402
 MonoBehaviour:
@@ -215,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 3018737931988820822}
+  stats: {fileID: -2846131913295069889}
   element: 0
 --- !u!114 &759441924588524803
 MonoBehaviour:
@@ -229,6 +232,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityScale: 15
+--- !u!114 &-2846131913295069889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055063002594972128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01de924a05cc64d69bcbcf9c24a4de6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectedGems: 0
+  isBigGemCollected: 0
 --- !u!1001 &181781409722727637
 PrefabInstance:
   m_ObjectHideFlags: 0
