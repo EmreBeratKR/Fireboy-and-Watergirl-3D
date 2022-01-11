@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private float speed;
 
-    // Update is called once per frame
-    void Update()
+    
+    private void FixedUpdate()
     {
-        
+        Debug.Log(rb.rotation.eulerAngles + Vector3.forward * speed * Time.fixedDeltaTime);
+        rb.MoveRotation(Quaternion.Euler(rb.rotation.eulerAngles + Vector3.forward * speed * Time.fixedDeltaTime));
     }
 }

@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e143675c6c084d14a79374cd427916d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 5438667014497926058}
+  speed: 100
 --- !u!1 &556775280810501064
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +156,7 @@ Transform:
   m_GameObject: {fileID: 2109208386280408961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3289853636148385994}
@@ -306,7 +308,7 @@ GameObject:
   - component: {fileID: 2628320978995479330}
   - component: {fileID: 8030552075383608934}
   - component: {fileID: 8334828366135373791}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +324,7 @@ Transform:
   m_GameObject: {fileID: 8068186496894936595}
   m_LocalRotation: {x: -0.00000009360039, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 153.13074}
+  m_LocalScale: {x: 100, y: 75, z: 153.13074}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6929314213135599835}
