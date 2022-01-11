@@ -18,11 +18,11 @@ public class PlayerMovement : EventListener
     private float facingProgress = 0f;
     private const float maxSpeed = 35f;
     private const float jumpSpeed = 75f;
-    private const float moveTreshhold = 1f;
+    //private const float moveTreshhold = 1f;
     private const float slidingTreshhold = 1.5f;
     private const float teleportTreshhold_X = 3f;
     private const float teleportTreshhold_Y = 35f;
-    private const float facingDuration = 0.5f;
+    //private const float facingDuration = 0.5f;
     public bool isLifted;
     public bool isLocked;
     public bool debugMode; // for debugging
@@ -48,7 +48,7 @@ public class PlayerMovement : EventListener
     {
         isRight = (Input.GetKey(keyBinding.right[0]) || Input.GetKey(keyBinding.right[1])) && !isLocked;
         isLeft = (Input.GetKey(keyBinding.left[0]) || Input.GetKey(keyBinding.left[1])) && !isLocked;
-        isJump = (Input.GetKey(keyBinding.jump[0]) || Input.GetKeyDown(keyBinding.jump[1])) && !isLocked;
+        isJump = (Input.GetKey(keyBinding.jump[0]) || Input.GetKey(keyBinding.jump[1])) && !isLocked;
     }
 
     private void TryJump()
