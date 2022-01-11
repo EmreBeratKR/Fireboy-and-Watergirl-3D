@@ -9,6 +9,7 @@ public class SceneController : MonoBehaviour
     [SerializeField] private GameObject warningText;
     [SerializeField] private Text timer;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject resultScreen;
     [SerializeField] private GameObject[] resultMembers;
     [SerializeField] private GameObject gameoverScreen;
@@ -25,6 +26,7 @@ public class SceneController : MonoBehaviour
         {
             startTime = Time.time;
             spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
+            pauseButton.SetActive(PhotonNetwork.IsMasterClient);
         }
     }
 
