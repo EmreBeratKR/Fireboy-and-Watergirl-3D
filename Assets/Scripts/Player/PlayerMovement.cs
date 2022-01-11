@@ -11,10 +11,11 @@ public class PlayerMovement : EventListener
     [SerializeField] private Transform model;
     [SerializeField] private GroundChecker groundChecker;
     [SerializeField] private KeyBinding keyBinding;
-    private Facing facing = Facing.Forward;
+    [SerializeField] private float rotationSpeed;
     private bool isRight = false;
     private bool isLeft = false;
     private bool isJump = false;
+    private float facingProgress = 0f;
     private const float maxSpeed = 35f;
     private const float jumpSpeed = 75f;
     private const float moveTreshhold = 1f;
@@ -85,19 +86,33 @@ public class PlayerMovement : EventListener
     {
         if (isRight)
         {
-            facing = Facing.Right;
-            model.rotation = Quaternion.Euler(0f, -90f, 0f);
+            facingProgress -= Time.deltaTime * rotationSpeed;
+            if (facingProgress < -1f)
+            {
+                facingProgress = -1f;
+            }
+            //model.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
         else if (isLeft)
         {
-            facing = Facing.Left;
-            model.rotation = Quaternion.Euler(0f, 90f, 0f);
+            facingProgress += Time.deltaTime * rotationSpeed;
+            if (facingProgress > 1f)
+            {
+                facingProgress = 1f;
+            }
+            //model.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
         else if (!isRight && !isLeft)
         {
-            facing = Facing.Left;
-            model.rotation = Quaternion.Euler(0f, 0f, 0f);
+            facingProgress += (facingProgress < 0f ? 1 : -1) * Time.deltaTime * rotationSpeed;
+            if (Mathf.Abs(facingProgress) < 0.2f)
+            {
+                facingProgress = 0f;
+            }
+            //model.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
+
+        model.rotation = Quaternion.Euler((facingProgress > 0 ? 1 : -1) * Vector3.Lerp(Vector3.zero, Vector3.up * 90f, Mathf.Abs(facingProgress)));
     }
 
     private void OnMoveInputReceived(EventData obj)
@@ -131,8 +146,6 @@ public class PlayerMovement : EventListener
         PhotonNetwork.RaiseEvent(EventCode._MOVEINPUT_EVENTCODE, datas, RaiseEventOptions.Default, SendOptions.SendUnreliable);
     }
 }
-
-public enum Facing {Forward, Right, Left}
 
 [System.Serializable]
 public struct KeyBinding
