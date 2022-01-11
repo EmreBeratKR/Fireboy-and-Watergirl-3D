@@ -132,5 +132,9 @@ public class CollisionController : EventListener
             sceneController.Open_GameoverScreen();
             Destroy(gameObject);
         }
+        else
+        {
+            playerMovement.isLocked = true;
+        }
     }
 }

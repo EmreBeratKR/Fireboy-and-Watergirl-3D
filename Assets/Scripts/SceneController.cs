@@ -4,19 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
-public class SceneController : MonoBehaviour
+using Photon.Realtime;
+using ExitGames.Client.Photon;
+public class SceneController : EventListener
 {
     [SerializeField] private GameObject warningText;
+    [SerializeField] private GameObject[] masterOnlyButtons;
+    [SerializeField] private GameObject[] waitForMasterTexts;
     [SerializeField] private Text timer;
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject resultScreen;
     [SerializeField] private GameObject[] resultMembers;
     [SerializeField] private GameObject gameoverScreen;
     [SerializeField] private Expectation expectations;
     private Spawner spawner;
     private float startTime;
-    private const int levelDelta = 3;
+    public const int levelDelta = 4;
     private const float menuWait = 1.5f;
 
 
@@ -26,7 +29,19 @@ public class SceneController : MonoBehaviour
         {
             startTime = Time.time;
             spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
-            pauseButton.SetActive(PhotonNetwork.IsMasterClient);
+            SetInGameCanvas();
+        }
+    }
+
+    private void SetInGameCanvas()
+    {
+        foreach (var button in masterOnlyButtons)
+        {
+            button.SetActive(PhotonNetwork.IsMasterClient);
+        }
+        foreach (var text in waitForMasterTexts)
+        {
+            text.SetActive(!PhotonNetwork.IsMasterClient);
         }
     }
 
@@ -37,24 +52,31 @@ public class SceneController : MonoBehaviour
 
     public void LoadLevelSelection()
     {
-        if (PhotonNetwork.PlayerList.Length == 2 || true)
+        if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.LoadLevel(3); // Level Selection Scene
-        }
-        else
-        {
-            warningText.SetActive(true);
+            if (PhotonNetwork.PlayerList.Length == 2 || true)
+            {
+                PhotonNetwork.LoadLevel(3); // Level Selection Scene
+            }
+            else
+            {
+                warningText.SetActive(true);
+            }
         }
     }
 
     public void Load_Level(int levelNumber)
     {
-        PhotonNetwork.LoadLevel(levelNumber+levelDelta);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.LoadLevel(levelNumber+levelDelta);
+        }
     }
 
     public void Restart_Level()
     {
-        PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.SetInt("Restarted Level", SceneManager.GetActiveScene().buildIndex);
+        PhotonNetwork.LoadLevel(4);
     }
 
     public void Toggle_PauseMenu(bool isOpen)

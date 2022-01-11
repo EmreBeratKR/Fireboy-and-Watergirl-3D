@@ -10,7 +10,6 @@ public class Rotator : MonoBehaviour
     
     private void FixedUpdate()
     {
-        Debug.Log(rb.rotation.eulerAngles + Vector3.forward * speed * Time.fixedDeltaTime);
         rb.MoveRotation(Quaternion.Euler(rb.rotation.eulerAngles + Vector3.forward * speed * Time.fixedDeltaTime));
     }
 }

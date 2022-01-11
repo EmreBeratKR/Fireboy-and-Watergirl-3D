@@ -3664,15 +3664,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: expectations.time
-      value: 120
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: expectations.fireGem
-      value: 3
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: expectations.waterGem
-      value: 4
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3388254981750782715, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: m_Pivot.x
