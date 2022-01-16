@@ -36,6 +36,11 @@ public class WeightChecker : MonoBehaviour
         float total = 0f;
         foreach (var contact in firstContacts)
         {
+            if (contact == null)
+            {
+                firstContacts.Remove(contact);
+                break;
+            }
             total += ContactWeight(contact); 
         }
         return total;
@@ -48,6 +53,11 @@ public class WeightChecker : MonoBehaviour
         total += contact.GetWeight();
         foreach (var con in contact.contacts)
         {
+            if (con == null)
+            {
+                contact.contacts.Remove(con);
+                break;
+            }
             if (!visitedContacts.Contains(con))
             {
                 total += ContactWeight(con);
