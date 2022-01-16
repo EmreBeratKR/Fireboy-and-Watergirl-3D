@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 6080501357331332306}
   - component: {fileID: 8332520077864359900}
   - component: {fileID: -2624707281689828947}
+  - component: {fileID: -7803098397274961873}
   m_Layer: 3
   m_Name: Watergirl
   m_TagString: Player
@@ -189,6 +190,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectedGems: 0
   isBigGemCollected: 0
+--- !u!114 &-7803098397274961873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661786921748724806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6f5b4265e2b4a61800ff796efb2af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contacts: []
 --- !u!1001 &663343395704111727
 PrefabInstance:
   m_ObjectHideFlags: 0

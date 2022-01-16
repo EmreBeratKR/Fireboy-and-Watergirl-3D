@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 2876356533936217402}
   - component: {fileID: 759441924588524803}
   - component: {fileID: -2846131913295069889}
+  - component: {fileID: -4701396553370133618}
   m_Layer: 3
   m_Name: Fireboy
   m_TagString: Player
@@ -189,6 +190,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectedGems: 0
   isBigGemCollected: 0
+--- !u!114 &-4701396553370133618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055063002594972128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6f5b4265e2b4a61800ff796efb2af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contacts: []
 --- !u!1001 &181781409722727637
 PrefabInstance:
   m_ObjectHideFlags: 0
