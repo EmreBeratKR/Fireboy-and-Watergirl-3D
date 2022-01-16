@@ -73,7 +73,7 @@ public class CollisionController : EventListener
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Lift")
+        if (other.gameObject.tag == "Lift" || other.gameObject.tag == "Elevator")
         {
             playerMovement.isLifted = true;
         }
@@ -81,7 +81,7 @@ public class CollisionController : EventListener
 
     private void OnCollisionExit(Collision other)
     {
-        if (other.gameObject.tag == "Lift")
+        if (other.gameObject.tag == "Lift" || other.gameObject.tag == "Elevator")
         {
             playerMovement.isLifted = false;
         }

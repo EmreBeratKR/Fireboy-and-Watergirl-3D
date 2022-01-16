@@ -15,6 +15,7 @@ TagManager:
   - Spawner
   - Wind Zone
   - Wall
+  - Elevator
   layers:
   - Default
   - TransparentFX

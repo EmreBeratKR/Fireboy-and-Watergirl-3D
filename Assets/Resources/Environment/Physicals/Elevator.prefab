@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 8209497432523247880}
   m_Layer: 0
   m_Name: Elevator (0)
-  m_TagString: Untagged
+  m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -621,7 +621,7 @@ Transform:
   m_GameObject: {fileID: 1453578556680648775}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 864420953489121830}
@@ -3477,7 +3477,7 @@ GameObject:
   - component: {fileID: 3610640035151809050}
   m_Layer: 0
   m_Name: Elevator (1)
-  m_TagString: Untagged
+  m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3923,7 +3923,7 @@ Transform:
   m_GameObject: {fileID: 8801530114452255023}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9169970880374201752}
