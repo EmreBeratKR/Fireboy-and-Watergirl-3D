@@ -7,7 +7,7 @@ public class Lift : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Switch[] switches;
     [SerializeField] private SwitchMode mode;
-    [SerializeField] private Transform lift;
+    [SerializeField] private MotionMode motionMode;
     [SerializeField] private Transform target;
     [SerializeField] private float speed;
     private float progress = 0;
@@ -28,7 +28,16 @@ public class Lift : MonoBehaviour
             {
                 progress = 0;
             }
-            rb.MovePosition(Vector3.Lerp(transform.position, target.position, progress));
+
+            switch (motionMode)
+            {
+                case MotionMode.Move:
+                    rb.MovePosition(Vector3.Lerp(transform.position, target.position, progress));
+                    break;
+                case MotionMode.Rotate:
+                    rb.MoveRotation(Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, target.rotation.eulerAngles, progress)));
+                    break;
+            }
         }
     }
 
@@ -55,3 +64,4 @@ public class Lift : MonoBehaviour
 }
 
 public enum SwitchMode {One, All}
+public enum MotionMode {Move, Rotate}

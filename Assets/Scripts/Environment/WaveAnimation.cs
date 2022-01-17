@@ -6,6 +6,7 @@ public class WaveAnimation : MonoBehaviour
 {
     [SerializeField] private Transform waves;
     [SerializeField] private float duration;
+    [SerializeField] private bool reversed;
     private const float deltaX = 10.54f;
 
 
@@ -18,7 +19,7 @@ public class WaveAnimation : MonoBehaviour
     {
         while (true)
         {
-            waves.LeanMoveLocalX(deltaX, duration);
+            waves.LeanMoveLocalX((reversed ? -1 : 1) * deltaX, duration);
             yield return new WaitForSeconds(duration);
             waves.localPosition = Vector3.zero;
         }

@@ -17,17 +17,23 @@ public class PushButton : Switch
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<PhotonView>().IsMine)
+        if (other.TryGetComponent(out PhotonView view))
         {
-            Raise_PushButtonEvent(true);
+            if (view.IsMine)
+            {
+                Raise_PushButtonEvent(true);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<PhotonView>().IsMine)
+        if (other.TryGetComponent(out PhotonView view))
         {
-            Raise_PushButtonEvent(false);
+            if (view.IsMine)
+            {
+                Raise_PushButtonEvent(false);
+            }
         }
     }
 

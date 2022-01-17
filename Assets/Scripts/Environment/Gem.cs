@@ -69,4 +69,4 @@ public class Gem : EventListener
     }
 }
 
-public enum Element {Fire, Water}
+public enum Element {Fire, Water, Pure}
