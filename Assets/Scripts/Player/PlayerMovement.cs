@@ -25,6 +25,7 @@ public class PlayerMovement : EventListener
     //private const float facingDuration = 0.5f;
     public bool isLifted;
     public bool isLocked;
+    public bool isChatting;
     public bool debugMode; // for debugging
 
 
@@ -46,9 +47,9 @@ public class PlayerMovement : EventListener
 
     private void GetInput()
     {
-        isRight = (Input.GetKey(keyBinding.right[0]) || Input.GetKey(keyBinding.right[1])) && !isLocked;
-        isLeft = (Input.GetKey(keyBinding.left[0]) || Input.GetKey(keyBinding.left[1])) && !isLocked;
-        isJump = (Input.GetKey(keyBinding.jump[0]) || Input.GetKey(keyBinding.jump[1])) && !isLocked;
+        isRight = (Input.GetKey(keyBinding.right[0]) || Input.GetKey(keyBinding.right[1])) && !isLocked && !isChatting;
+        isLeft = (Input.GetKey(keyBinding.left[0]) || Input.GetKey(keyBinding.left[1])) && !isLocked && !isChatting;
+        isJump = (Input.GetKey(keyBinding.jump[0]) || Input.GetKey(keyBinding.jump[1])) && !isLocked && !isChatting;
     }
 
     private void TryJump()
