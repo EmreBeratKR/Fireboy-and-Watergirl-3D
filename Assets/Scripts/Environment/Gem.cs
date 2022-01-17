@@ -34,9 +34,9 @@ public class Gem : EventListener
         }
     }
 
-    public void RaiseGemEvent()
+    public void RaiseGemEvent(bool isPureGem)
     {
-        object[] datas = new object[] {photonView.ViewID};
+        object[] datas = new object[] {photonView.ViewID, isPureGem};
         PhotonNetwork.RaiseEvent(EventCode._GEMCOLLECT_EVENTCODE, datas, RaiseEventOptions.Default, SendOptions.SendUnreliable);
 
         Destroy(gameObject);

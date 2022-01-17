@@ -8,7 +8,7 @@ using ExitGames.Client.Photon;
 public class PlayerStats : EventListener
 {
     public int collectedGems;
-    public bool isBigGemCollected;
+    public bool isPureGemCollected;
 
 
     private void Start()
@@ -20,7 +20,16 @@ public class PlayerStats : EventListener
     {
         if (obj.Code == EventCode._GEMCOLLECT_EVENTCODE)
         {
-            if (!photonView.IsMine)
+            object[] datas = (object[]) obj.CustomData;
+            bool _isPureGemCollected = (bool) datas[1];
+
+            // pure gem collected event
+            if (_isPureGemCollected)
+            {
+                isPureGemCollected = true;
+            }
+            // other element gem collected event
+            else if (!photonView.IsMine)
             {
                 collectedGems++;
             }

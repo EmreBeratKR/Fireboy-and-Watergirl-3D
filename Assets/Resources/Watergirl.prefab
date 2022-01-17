@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectedGems: 0
-  isBigGemCollected: 0
+  isPureGemCollected: 0
 --- !u!114 &-7803098397274961873
 MonoBehaviour:
   m_ObjectHideFlags: 0

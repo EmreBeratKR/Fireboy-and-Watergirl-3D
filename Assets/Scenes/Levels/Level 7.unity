@@ -3002,11 +3002,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: expectations.fireGem
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: expectations.waterGem
-      value: 7
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: expectations.needBigGem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: expectations.needPureGem
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3388254981750782715, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: m_Pivot.x

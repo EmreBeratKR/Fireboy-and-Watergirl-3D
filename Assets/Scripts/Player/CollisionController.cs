@@ -31,7 +31,12 @@ public class CollisionController : EventListener
                 if (gem.element == element)
                 {
                     stats.collectedGems++;
-                    gem.RaiseGemEvent();
+                    gem.RaiseGemEvent(false);
+                }
+                else if (gem.element == Element.Pure)
+                {
+                    stats.isPureGemCollected = true;
+                    gem.RaiseGemEvent(true);
                 }
             }
         }

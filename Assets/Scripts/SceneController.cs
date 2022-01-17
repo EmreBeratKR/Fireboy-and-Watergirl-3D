@@ -123,12 +123,12 @@ public class SceneController : EventListener
         waterCheck.text = (waterGemCount < expectations.waterGem) ? "X" : "✔";
         waterCheck.color = (waterGemCount < expectations.waterGem) ? Color.red : Color.green;
 
-        resultMembers[3].SetActive(expectations.needBigGem);
-        if (expectations.needBigGem)
+        resultMembers[3].SetActive(expectations.needPureGem);
+        if (expectations.needPureGem)
         {
             Text bigGemCheck = resultMembers[3].transform.Find("Check").GetComponent<Text>();
 
-            bigGemCheck.text = (fireboy.GetComponent<PlayerStats>().isBigGemCollected || watergirl.GetComponent<PlayerStats>().isBigGemCollected ? "✔" : "X");
+            bigGemCheck.text = (fireboy.GetComponent<PlayerStats>().isPureGemCollected || watergirl.GetComponent<PlayerStats>().isPureGemCollected ? "✔" : "X");
             bigGemCheck.color = (bigGemCheck.text == "✔") ? Color.green : Color.red;
         }
     }
@@ -170,5 +170,5 @@ public struct Expectation
     public float time;
     public int fireGem;
     public int waterGem;
-    public bool needBigGem;
+    public bool needPureGem;
 }

@@ -1216,7 +1216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930430899}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100.8, y: -11.8, z: 0}
+  m_LocalPosition: {x: 100.4, y: 59.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2613,7 +2613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127525623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 101, y: 59.3, z: 0}
+  m_LocalPosition: {x: -100.8, y: -11.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2695,15 +2695,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: expectations.time
-      value: 30
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: expectations.fireGem
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 375670652849789741, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: expectations.waterGem
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3388254981750782715, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: m_Pivot.x
@@ -2903,4 +2903,4 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 26f1a4e03c141494cafa4e7cc4082d39, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: e3b35da6c071241d985540b946fd14ce, type: 3}
