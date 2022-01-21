@@ -223,10 +223,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8849963245683246360, guid: 3b584738e9c84465a9e9829870104d85, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849963245683246360, guid: 3b584738e9c84465a9e9829870104d85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -294,6 +290,10 @@ PrefabInstance:
     - target: {fileID: 1852043877554807257, guid: b491c542f0eec4efc8e22552d31089d6, type: 3}
       propertyPath: m_Name
       value: Chat Box Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3773121359892020516, guid: b491c542f0eec4efc8e22552d31089d6, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5992414758560572857, guid: b491c542f0eec4efc8e22552d31089d6, type: 3}
       propertyPath: m_Pivot.x

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GroundChecker : MonoBehaviour
 {
     [SerializeField] private LayerMask targetLayer;
-    private const float maxDistance = 1.5f;
+    private const float maxDistance = 2f;
     private RaycastHit hit;
 
 

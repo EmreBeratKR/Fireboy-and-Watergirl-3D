@@ -3241,6 +3241,18 @@ PrefabInstance:
       propertyPath: isOn
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8664769213368461017, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8660254
+      objectReference: {fileID: 0}
+    - target: {fileID: 8664769213368461017, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8664769213368461017, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 8800598091274843324, guid: b5dbf5ecebb314862a7f38156c269c9f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
