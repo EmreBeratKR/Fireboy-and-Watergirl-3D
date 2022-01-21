@@ -11,6 +11,7 @@ public class CollisionController : EventListener
     [SerializeField] private PlayerStats stats;
     private SceneController sceneController;
     public Element element;
+    public bool isPushing;
 
 
     private void Start()
@@ -82,6 +83,10 @@ public class CollisionController : EventListener
         {
             playerMovement.isLifted = true;
         }
+        if (other.gameObject.tag == "Box")
+        {
+            isPushing = true;
+        }
     }
 
     private void OnCollisionExit(Collision other)
@@ -89,6 +94,10 @@ public class CollisionController : EventListener
         if (other.gameObject.tag == "Lift" || other.gameObject.tag == "Elevator")
         {
             playerMovement.isLifted = false;
+        }
+        if (other.gameObject.tag == "Box")
+        {
+            isPushing = false;
         }
     }
 

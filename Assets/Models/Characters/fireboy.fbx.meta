@@ -1,8 +1,29 @@
 fileFormatVersion: 2
-guid: 6ee7c8bb80edf43dea0735377da44570
+guid: 220798b18457b4c9eb75899b1099ece7
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -4449717305648701825
+    second: Armature|0TPose
+  - first:
+      74: -6765456534593806232
+    second: Armature|Character_Idle
+  - first:
+      74: -2609926119013335802
+    second: Armature|Character_Run
+  - first:
+      74: -3940031873545852154
+    second: Armature|Circle.001Action
+  - first:
+      74: -6227679977586317443
+    second: Armature|Circle.002Action
+  - first:
+      74: -6787691547383614650
+    second: Armature|Circle.003Action
+  - first:
+      74: -751813995980742648
+    second: Armature|EmptyAction
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -76,7 +97,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []

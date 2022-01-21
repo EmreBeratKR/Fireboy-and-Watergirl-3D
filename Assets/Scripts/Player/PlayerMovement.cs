@@ -10,6 +10,7 @@ public class PlayerMovement : EventListener
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform model;
     [SerializeField] private GroundChecker groundChecker;
+    [SerializeField] private CollisionController collisionController;
     [SerializeField] private KeyBinding keyBinding;
     [SerializeField] private float rotationSpeed;
     private bool isRight = false;
@@ -23,6 +24,7 @@ public class PlayerMovement : EventListener
     private const float teleportTreshhold_X = 3f;
     private const float teleportTreshhold_Y = 35f;
     //private const float facingDuration = 0.5f;
+    public PlayerState state {get {return Get_State();}}
     public bool isLifted;
     public bool isLocked;
     public bool isChatting;
@@ -114,6 +116,24 @@ public class PlayerMovement : EventListener
         }
 
         model.rotation = Quaternion.Euler((facingProgress > 0 ? 1 : -1) * Vector3.Lerp(Vector3.zero, Vector3.up * 90f, Mathf.Abs(facingProgress)));
+    }
+
+    private PlayerState Get_State()
+    {
+        if (!groundChecker.isGrounded())
+        {
+            return PlayerState.Float;
+        }
+
+        if (isLeft || isRight)
+        {
+            if (collisionController.isPushing)
+            {
+                return PlayerState.Push;
+            }
+            return PlayerState.Run;
+        }
+        return PlayerState.Idle;
     }
 
     private void OnMoveInputReceived(EventData obj)
