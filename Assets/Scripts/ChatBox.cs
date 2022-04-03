@@ -1,23 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
 using ExitGames.Client.Photon;
 
 public class ChatBox : EventListener
 {
-    [SerializeField] private PhotonView view;
-    [SerializeField] private InputField chatbox;
-    private bool isWriting = false;
-    private float lastMsg_Time = 0f;
+    private const string invalidChars = "\n";
     private const float msgLifetime = 3f;
+    private const float extraLineHeight = 15f;
+
+    [SerializeField] private PhotonView view;
+    [SerializeField] private TMP_InputField chatbox;
+    private RectTransform rectTransform;
+    private bool isWriting = false;
+    private float lastMsgTime = 0f;
+    private float singleLineHeight;
+
+    private float height { get => rectTransform.sizeDelta.y; set => rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, value); }
+    private int lineCount => chatbox.textComponent.GetTextInfo(chatbox.text).lineCount;
     
 
     private void Start()
     {
         targetEvent = OnChatEvent;
+        rectTransform = chatbox.GetComponent<RectTransform>();
+        singleLineHeight = height;
+
+        if (!view.IsMine)
+        {
+            chatbox.readOnly = true;
+            chatbox.interactable = false;
+        }
     }
 
     private void Update()
@@ -27,10 +43,10 @@ public class ChatBox : EventListener
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 isWriting = !isWriting;
-                chatbox.gameObject.SetActive(isWriting);
                 view.GetComponent<PlayerMovement>().isChatting = isWriting;
                 if (isWriting)
                 {
+                    ShowChatBox();
                     chatbox.ActivateInputField();
                     chatbox.text = "";
                 }
@@ -40,17 +56,68 @@ public class ChatBox : EventListener
                     {
                         Raise_ChatEvent(chatbox.text);
                     }
+                    
+                    chatbox.readOnly = true;
+                    chatbox.interactable = false;
                 }
+            }
+
+            if (isWriting)
+            {
+                UpdateHeight();
             }
         }
 
-        if (Time.time - lastMsg_Time > msgLifetime && !isWriting)
-        {
-            chatbox.gameObject.SetActive(false);
-        }
+        TrySelfHide();
     }
 
-        private void OnChatEvent(EventData obj)
+    private void ShowChatBox()
+    {
+        chatbox.readOnly = false;
+        chatbox.interactable = true;
+        chatbox.gameObject.SetActive(true);
+    }
+
+    private void HideChatBox()
+    {
+        chatbox.gameObject.SetActive(false);
+    }
+
+    private string IgnoreInvalidChars(string input)
+    {
+        var filtered = "";
+
+        foreach (char ch in input)
+        {
+            if (invalidChars.Contains(ch)) continue;
+
+            filtered += ch;
+        }
+
+        return filtered;
+    }
+
+    private bool TrySelfHide()
+    {
+        if ((Time.time - lastMsgTime) < msgLifetime) return false;
+
+        if (isWriting) return false;
+
+        HideChatBox();
+        return true;
+    }
+
+    private void UpdateHeight()
+    {
+        this.height = singleLineHeight + extraLineHeight * (lineCount-1);
+    }
+
+    public void OnValueChanged()
+    {
+        chatbox.text = IgnoreInvalidChars(chatbox.text);
+    }
+
+    private void OnChatEvent(EventData obj)
     {
         if (obj.Code == EventCode._CHATMSG_EVENTCODE)
         {
@@ -61,8 +128,9 @@ public class ChatBox : EventListener
             if (view.ViewID == sender_viewID)
             {
                 chatbox.text = _msg;
-                chatbox.gameObject.SetActive(true);
-                lastMsg_Time = Time.time;
+                UpdateHeight();
+                ShowChatBox();
+                lastMsgTime = Time.time;
             }
         }
     }
@@ -72,7 +140,6 @@ public class ChatBox : EventListener
         object[] datas = new object[] {view.ViewID, msg};
         PhotonNetwork.RaiseEvent(EventCode._CHATMSG_EVENTCODE, datas, RaiseEventOptions.Default, SendOptions.SendUnreliable);
 
-        chatbox.gameObject.SetActive(true);
-        lastMsg_Time = Time.time;
+        lastMsgTime = Time.time;
     }
 }
