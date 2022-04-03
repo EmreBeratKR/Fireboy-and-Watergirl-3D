@@ -15,6 +15,7 @@ public class SceneController : EventListener
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject resultScreen;
     [SerializeField] private GameObject[] resultMembers;
+    [SerializeField] private Icons resultIcons;
     [SerializeField] private GameObject gameoverScreen;
     [SerializeField] private Expectation expectations;
     private Spawner spawner;
@@ -105,10 +106,10 @@ public class SceneController : EventListener
 
         resultMembers[0].GetComponent<Text>().text = minutes.ToString() + ":" + secs;
 
-        Text timeCheck = resultMembers[0].transform.Find("Check").GetComponent<Text>();
+        Image timeCheck = resultMembers[0].transform.Find("Check").GetComponent<Image>();
 
-        timeCheck.text = timeElapsed <= expectations.time ? "✔" : "X";
-        timeCheck.color = timeElapsed <= expectations.time ? Color.green : Color.red;
+        timeCheck.sprite = timeElapsed <= expectations.time ? resultIcons.tick : resultIcons.cross;
+        timeCheck.color = timeElapsed <= expectations.time ? resultIcons.tickColor : resultIcons.crossColor;
 
         GameObject fireboy = (spawner.Get_Me().GetComponent<CollisionController>().element == Element.Fire) ? spawner.Get_Me() : spawner.Get_Other();
         int fireGemCount = fireboy.GetComponent<PlayerStats>().collectedGems;
@@ -123,23 +124,26 @@ public class SceneController : EventListener
         if (!expectations.needPureGem)
         {
             resultMembers[1].GetComponent<Text>().text = fireGemCount.ToString();
-            Text fireCheck = resultMembers[1].transform.Find("Check").GetComponent<Text>();
+            Image fireCheck = resultMembers[1].transform.Find("Check").GetComponent<Image>();
 
-            fireCheck.text = (fireGemCount < expectations.fireGem) ? "X" : "✔";
-            fireCheck.color = (fireGemCount < expectations.fireGem) ? Color.red : Color.green;
+            bool allFireGemsCollected = (fireGemCount >= expectations.fireGem);
+            fireCheck.sprite = allFireGemsCollected ? resultIcons.tick : resultIcons.cross;
+            fireCheck.color = allFireGemsCollected ? resultIcons.tickColor : resultIcons.crossColor;
 
 
             resultMembers[2].GetComponent<Text>().text = waterGemCount.ToString();
-            Text waterCheck = resultMembers[2].transform.Find("Check").GetComponent<Text>();
+            Image waterCheck = resultMembers[2].transform.Find("Check").GetComponent<Image>();
 
-            waterCheck.text = (waterGemCount < expectations.waterGem) ? "X" : "✔";
-            waterCheck.color = (waterGemCount < expectations.waterGem) ? Color.red : Color.green;
+            bool allWaterGemsCollected = (waterGemCount >= expectations.waterGem);
+            waterCheck.sprite = allWaterGemsCollected ? resultIcons.tick : resultIcons.cross;
+            waterCheck.color = allWaterGemsCollected ? resultIcons.tickColor : resultIcons.crossColor;
         }
         else
         {
-            Text bigGemCheck = resultMembers[3].transform.Find("Check").GetComponent<Text>();
-            bigGemCheck.text = (fireboy.GetComponent<PlayerStats>().isPureGemCollected || watergirl.GetComponent<PlayerStats>().isPureGemCollected ? "✔" : "X");
-            bigGemCheck.color = (bigGemCheck.text == "✔") ? Color.green : Color.red;
+            Image bigGemCheck = resultMembers[3].transform.Find("Check").GetComponent<Image>();
+            bool isPureGemCollected = (fireboy.GetComponent<PlayerStats>().isPureGemCollected || watergirl.GetComponent<PlayerStats>().isPureGemCollected);
+            bigGemCheck.sprite = isPureGemCollected ? resultIcons.tick : resultIcons.cross;
+            bigGemCheck.color = isPureGemCollected ? resultIcons.tickColor : resultIcons.crossColor;
         }
     }
 
@@ -170,6 +174,22 @@ public class SceneController : EventListener
         string secs = (seconds < 10) ? "0" + seconds.ToString() : seconds.ToString();
 
         timer.text = minutes.ToString() + ":" + secs;
+    }
+
+
+
+
+    [System.Serializable]
+    private struct Icons
+    {
+        public Sprite waterGem;
+        public Sprite fireGem;
+        public Sprite pureGem;
+        public Sprite tick;
+        public Sprite cross;
+        public Color tickColor;
+        public Color crossColor;
+
     }
 }
 
