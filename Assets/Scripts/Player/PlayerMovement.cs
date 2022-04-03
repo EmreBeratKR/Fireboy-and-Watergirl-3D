@@ -12,7 +12,7 @@ public class PlayerMovement : EventListener
     [SerializeField] private GroundChecker groundChecker;
     [SerializeField] private CollisionController collisionController;
     [SerializeField] private KeyBinding keyBinding;
-    [SerializeField, Range(0.01f, 0.1f)] private float rotationSpeed;
+    [SerializeField, Range(10f, 50f)] private float rotationSpeed;
     private bool isRight = false;
     private bool isLeft = false;
     private bool isJump = false;
@@ -28,7 +28,7 @@ public class PlayerMovement : EventListener
     public bool isLifted;
     public bool isLocked;
     public bool isChatting;
-    public bool debugMode; // for debugging
+    public bool debugMode;
 
 
     private void Start()
@@ -43,6 +43,8 @@ public class PlayerMovement : EventListener
             GetInput();
             Raise_MoveInputEvent();
         }
+
+        UpdateFacing();
 
         Move();
     }
@@ -67,8 +69,6 @@ public class PlayerMovement : EventListener
 
     private void Move()
     {
-        UpdateFacing();
-
         if (isRight)
         {
             rb.velocity = new Vector3(maxSpeed, rb.velocity.y, 0f);
@@ -79,7 +79,7 @@ public class PlayerMovement : EventListener
         }
         
         TryJump();
-        
+
         if (!isRight && !isLeft)
         {
             if (Mathf.Abs(rb.velocity.y) <= slidingTreshhold || !groundChecker.isGrounded() || isLifted)
@@ -101,7 +101,7 @@ public class PlayerMovement : EventListener
             desiredAngle = 90;
         }
 
-        float lerpedAngle = Mathf.LerpAngle(model.eulerAngles.y, desiredAngle, rotationSpeed);
+        float lerpedAngle = Mathf.LerpAngle(model.eulerAngles.y, desiredAngle, rotationSpeed * Time.deltaTime);
 
         model.eulerAngles = Vector3.up * lerpedAngle;
     }
