@@ -16,14 +16,11 @@ public class PlayerMovement : EventListener
     private bool isRight = false;
     private bool isLeft = false;
     private bool isJump = false;
-    private float facingProgress = 0f;
     private const float maxSpeed = 35f;
     private const float jumpSpeed = 75f;
-    //private const float moveTreshhold = 1f;
     private const float slidingTreshhold = 1.5f;
     private const float teleportTreshhold_X = 3f;
     private const float teleportTreshhold_Y = 35f;
-    //private const float facingDuration = 0.5f;
     public PlayerState state {get {return Get_State();}}
     public bool isLifted;
     public bool isLocked;
