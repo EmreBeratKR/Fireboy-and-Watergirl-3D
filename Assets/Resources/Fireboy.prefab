@@ -146,7 +146,7 @@ MonoBehaviour:
     right: 6400000013010000
     left: 6100000014010000
     jump: 7700000011010000
-  rotationSpeed: 10
+  rotationSpeed: 0.03
   isLifted: 0
   isLocked: 0
   isChatting: 0

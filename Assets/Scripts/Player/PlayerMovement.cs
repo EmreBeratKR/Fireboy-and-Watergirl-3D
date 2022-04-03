@@ -12,7 +12,7 @@ public class PlayerMovement : EventListener
     [SerializeField] private GroundChecker groundChecker;
     [SerializeField] private CollisionController collisionController;
     [SerializeField] private KeyBinding keyBinding;
-    [SerializeField] private float rotationSpeed;
+    [SerializeField, Range(0.01f, 0.1f)] private float rotationSpeed;
     private bool isRight = false;
     private bool isLeft = false;
     private bool isJump = false;
@@ -68,6 +68,7 @@ public class PlayerMovement : EventListener
     private void Move()
     {
         UpdateFacing();
+
         if (isRight)
         {
             rb.velocity = new Vector3(maxSpeed, rb.velocity.y, 0f);
@@ -76,7 +77,9 @@ public class PlayerMovement : EventListener
         {
             rb.velocity = new Vector3(-maxSpeed, rb.velocity.y, 0f);
         }
+        
         TryJump();
+        
         if (!isRight && !isLeft)
         {
             if (Mathf.Abs(rb.velocity.y) <= slidingTreshhold || !groundChecker.isGrounded() || isLifted)
@@ -87,35 +90,20 @@ public class PlayerMovement : EventListener
     }
     private void UpdateFacing()
     {
+        float desiredAngle = 0;
+
         if (isRight)
         {
-            facingProgress -= Time.deltaTime * rotationSpeed;
-            if (facingProgress < -1f)
-            {
-                facingProgress = -1f;
-            }
-            //model.rotation = Quaternion.Euler(0f, -90f, 0f);
+            desiredAngle = -90;
         }
         else if (isLeft)
         {
-            facingProgress += Time.deltaTime * rotationSpeed;
-            if (facingProgress > 1f)
-            {
-                facingProgress = 1f;
-            }
-            //model.rotation = Quaternion.Euler(0f, 90f, 0f);
-        }
-        else if (!isRight && !isLeft)
-        {
-            facingProgress += (facingProgress < 0f ? 1 : -1) * Time.deltaTime * rotationSpeed;
-            if (Mathf.Abs(facingProgress) < 0.2f)
-            {
-                facingProgress = 0f;
-            }
-            //model.rotation = Quaternion.Euler(0f, 0f, 0f);
+            desiredAngle = 90;
         }
 
-        model.rotation = Quaternion.Euler((facingProgress > 0 ? 1 : -1) * Vector3.Lerp(Vector3.zero, Vector3.up * 90f, Mathf.Abs(facingProgress)));
+        float lerpedAngle = Mathf.LerpAngle(model.eulerAngles.y, desiredAngle, rotationSpeed);
+
+        model.eulerAngles = Vector3.up * lerpedAngle;
     }
 
     private PlayerState Get_State()
