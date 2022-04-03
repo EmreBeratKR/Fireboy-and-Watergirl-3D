@@ -48,6 +48,15 @@ public class CreateNJoinRoom : MonoBehaviourPunCallbacks
         }
     }
 
+    public override void OnCreateRoomFailed(short returnCode, string message)
+    {
+        if (returnCode == ErrorCode.GameIdAlreadyExists)
+        {
+            warningText.text = "Failed to create room, That room has already existed!";
+            return;
+        }
+    }
+
     public void JoinRoom()
     {
         if (nameInput.text == "")
@@ -72,7 +81,7 @@ public class CreateNJoinRoom : MonoBehaviourPunCallbacks
 
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
-        warningText.text = $"Failed to Join ({roomInput.text})";
+        warningText.text = $"Failed to Join ({roomInput.text}), {message}!";
     }
 
     private void SetNickname()
