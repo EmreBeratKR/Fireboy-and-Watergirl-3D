@@ -82,11 +82,8 @@ public class SceneController : EventListener
 
     public void Toggle_PauseMenu(bool isOpen)
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            spawner.Get_Me().GetComponent<PlayerMovement>().isLocked = isOpen;
-            pauseMenu.SetActive(isOpen);
-        }
+        spawner.Get_Me().GetComponent<PlayerMovement>().isLocked = isOpen;
+        pauseMenu.SetActive(isOpen);
     }
 
     public void Open_ResultScreen()

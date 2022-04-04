@@ -2187,9 +2187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warningText: {fileID: 0}
   masterOnlyButtons:
-  - {fileID: 7138153581798555164}
+  - {fileID: 3388254982375807460}
   - {fileID: 2103764856029850530}
   - {fileID: 983886761386840287}
+  - {fileID: 3388254981527169158}
   - {fileID: 4798753410655999618}
   waitForMasterTexts:
   - {fileID: 7232731577976426236}
