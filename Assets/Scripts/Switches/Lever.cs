@@ -58,6 +58,8 @@ public class Lever : Switch
         {
             StartCoroutine(Open());
         }
+
+        AudioManager.PlayLeverPull();
     }
 
     private IEnumerator Open()

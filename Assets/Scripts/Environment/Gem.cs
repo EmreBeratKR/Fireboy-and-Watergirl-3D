@@ -20,6 +20,12 @@ public class Gem : EventListener
         StartCoroutine(AnimationCo());
     }
 
+    private void Collect()
+    {
+        Destroy(this.gameObject);
+        AudioManager.PlayGemCollect();
+    }
+
     private void OnCollected(EventData obj)
     {
         if (obj.Code == EventCode._GEMCOLLECT_EVENTCODE)
@@ -29,7 +35,7 @@ public class Gem : EventListener
 
             if (viewID == photonView.ViewID)
             {
-                Destroy(gameObject);
+                Collect();
             }
         }
     }
@@ -39,7 +45,7 @@ public class Gem : EventListener
         object[] datas = new object[] {photonView.ViewID, isPureGem};
         PhotonNetwork.RaiseEvent(EventCode._GEMCOLLECT_EVENTCODE, datas, RaiseEventOptions.Default, SendOptions.SendUnreliable);
 
-        Destroy(gameObject);
+        Collect();
     }
 
     private IEnumerator AnimationCo()

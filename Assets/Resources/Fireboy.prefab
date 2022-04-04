@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b93f142ae00849d890df1ec6cf262f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  element: 0
   rb: {fileID: 373610057260029698}
   model: {fileID: 8636031185045924150}
   groundChecker: {fileID: 3748782991325284922}

@@ -15,13 +15,24 @@ public class PushButton : Switch
         targetEvent = OnPushButtonEventReceived;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out PhotonView view))
+        {
+            if (view.IsMine)
+            {
+                Raise_PushButtonEvent(true, true);
+            }
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.TryGetComponent(out PhotonView view))
         {
             if (view.IsMine)
             {
-                Raise_PushButtonEvent(true);
+                Raise_PushButtonEvent(true, false);
             }
         }
     }
@@ -32,7 +43,7 @@ public class PushButton : Switch
         {
             if (view.IsMine)
             {
-                Raise_PushButtonEvent(false);
+                Raise_PushButtonEvent(false, true);
             }
         }
     }
@@ -44,20 +55,21 @@ public class PushButton : Switch
             object[] datas = (object[]) obj.CustomData;
             int viewID = (int) datas[0];
             bool newState = (bool) datas[1];
+            bool playAudio = (bool) datas[2];
 
             if (photonView.ViewID == viewID)
             {
-                SetPushButtonState(newState);
+                SetPushButtonState(newState, playAudio);
             }
         }
     }
 
-    private void Raise_PushButtonEvent(bool newState)
+    private void Raise_PushButtonEvent(bool newState, bool playAudio)
     {
-        object[] datas = new object[] {photonView.ViewID, newState};
+        object[] datas = new object[] {photonView.ViewID, newState, playAudio};
         PhotonNetwork.RaiseEvent(EventCode._PUSHBUTTON_EVENTCODE, datas, RaiseEventOptions.Default, SendOptions.SendUnreliable);
 
-        SetPushButtonState(newState);
+        SetPushButtonState(newState, playAudio);
     }
 
     private void Open()
@@ -72,7 +84,7 @@ public class PushButton : Switch
         button.transform.localPosition = Vector3.up * 0.028f;
     }
 
-    private void SetPushButtonState(bool newState)
+    private void SetPushButtonState(bool newState, bool playAudio)
     {
         if (newState)
         {
@@ -81,6 +93,11 @@ public class PushButton : Switch
         else
         {
             Close();
+        }
+
+        if (playAudio)
+        {
+            AudioManager.PlayButtonToggle();
         }
     }
 }

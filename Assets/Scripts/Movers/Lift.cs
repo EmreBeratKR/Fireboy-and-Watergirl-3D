@@ -11,6 +11,8 @@ public class Lift : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private float speed;
     private float progress = 0;
+    private bool isMakeNoise = false;
+    private bool isMoving;
     public bool isLocked;
     public bool safeDirection;
 
@@ -19,14 +21,18 @@ public class Lift : MonoBehaviour
     {
         if (!isLocked || (State() == safeDirection))
         {
+            isMoving = true;
+
             progress += (State() ? 1 : -1) * Time.fixedDeltaTime * speed;
             if (progress > 1)
             {
                 progress = 1;
+                isMoving = false;
             }
             else if (progress < 0)
             {
                 progress = 0;
+                isMoving = false;
             }
 
             switch (motionMode)
@@ -37,6 +43,27 @@ public class Lift : MonoBehaviour
                 case MotionMode.Rotate:
                     rb.MoveRotation(Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, target.rotation.eulerAngles, progress)));
                     break;
+            }
+        }
+        else
+        {
+            isMoving = false;
+        }
+
+        if (isMoving)
+        {
+            if (!isMakeNoise)
+            {
+                AudioManager.TryPlayLiftMove();
+                isMakeNoise = true;
+            }
+        }
+        else
+        {
+            if (isMakeNoise)
+            {
+                AudioManager.TryStopLiftMove();
+                isMakeNoise = false;
             }
         }
     }

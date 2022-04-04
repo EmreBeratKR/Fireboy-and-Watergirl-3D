@@ -16,7 +16,7 @@ public class WindTurbine : MonoBehaviour
     {
         if (isActive)
         {
-            StartCoroutine(RotateCo());
+            Enable();
         }
     }
 
@@ -26,16 +26,14 @@ public class WindTurbine : MonoBehaviour
         {
             if (!isActive)
             {
-                isActive = true;
-                StartCoroutine(RotateCo());
+                Enable();
             }
         }
         else
         {
             if (isActive)
             {
-                isActive = false;
-                StopAllCoroutines();
+                Disable();
             }
         }
     }
@@ -49,6 +47,20 @@ public class WindTurbine : MonoBehaviour
                 other.attachedRigidbody.AddForce(transform.up * windForce, ForceMode.Impulse);
             }
         }
+    }
+
+    private void Enable()
+    {
+        isActive = true;
+        StartCoroutine(RotateCo());
+        AudioManager.PlayWind();
+    }
+
+    private void Disable()
+    {
+        isActive = false;
+        StopAllCoroutines();
+        AudioManager.StopWind();
     }
 
     private bool State()

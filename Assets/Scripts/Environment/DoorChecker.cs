@@ -20,6 +20,8 @@ public class DoorChecker : MonoBehaviour
         if (!isWon && doors[0].isOpen && doors[1].isOpen)
         {
             isWon = true;
+            AudioManager.StopMusic();
+            AudioManager.PlayLevelFinish(LevelManager.Instance.type);
             sceneController.Open_ResultScreen();
         }
         else if (!isWon)

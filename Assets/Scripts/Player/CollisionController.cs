@@ -145,6 +145,10 @@ public class CollisionController : EventListener
         {
             sceneController.Open_GameoverScreen();
             Destroy(gameObject);
+
+            AudioManager.StopMusic();
+            AudioManager.PlayDeath(this.element);
+            AudioManager.PlayGameover();
         }
         else
         {

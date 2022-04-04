@@ -7,6 +7,8 @@ using ExitGames.Client.Photon;
 
 public class PlayerMovement : EventListener
 {
+    [field:SerializeField] public Element element;
+
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform model;
     [SerializeField] private GroundChecker groundChecker;
@@ -60,6 +62,8 @@ public class PlayerMovement : EventListener
             if (groundChecker.isGrounded() || debugMode)
             {
                 rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, 0f);
+                
+                AudioManager.PlayJump(this.element);
             }
         }
     }

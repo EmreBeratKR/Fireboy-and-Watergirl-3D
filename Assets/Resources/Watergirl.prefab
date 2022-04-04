@@ -2730,6 +2730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b93f142ae00849d890df1ec6cf262f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  element: 1
   rb: {fileID: 1857776436165944022}
   model: {fileID: 3938990044566453137}
   groundChecker: {fileID: 8260861464704709346}
