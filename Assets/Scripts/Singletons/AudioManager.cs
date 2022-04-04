@@ -9,7 +9,7 @@ public class AudioManager : Singleton<AudioManager>
     public static void StopAllAudios()
     {
         StopMusic();
-        StopWind();
+        TryStopWind();
         TryStopDoorOpen();
         TryStopDoorClose();
         TryStopLiftMove();
@@ -116,14 +116,24 @@ public class AudioManager : Singleton<AudioManager>
         return true;
     }
 
-    public static void PlayWind()
+    public static bool TryPlayWind()
     {
-        AudioManager.Instance.audios.sfx.ambiance.wind.Play();
+        var audio = AudioManager.Instance.audios.sfx.ambiance.wind;
+
+        if (audio.isPlaying) return false;
+        
+        audio.Play();
+        return true;
     }
 
-    public static void StopWind()
+    public static bool TryStopWind()
     {
-        AudioManager.Instance.audios.sfx.ambiance.wind.Stop();
+        var audio = AudioManager.Instance.audios.sfx.ambiance.wind;
+
+        if (!audio.isPlaying) return false;
+        
+        audio.Stop();
+        return true;
     }
 
     public static bool TryPlayDoorOpen()

@@ -10,6 +10,7 @@ public class WindTurbine : MonoBehaviour
     [SerializeField] private float windForce;
     [SerializeField] private bool isActive;
     [SerializeField] private RotationAxis rotationAxis;
+    private bool isMakeNoise = false;
 
 
     private void Start()
@@ -36,6 +37,20 @@ public class WindTurbine : MonoBehaviour
                 Disable();
             }
         }
+
+        if (isActive)
+        {
+            isMakeNoise = true;
+            AudioManager.TryPlayWind();
+        }
+        else
+        {
+            if (isMakeNoise)
+            {
+                isMakeNoise = false;
+                AudioManager.TryStopWind();
+            }
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -53,14 +68,12 @@ public class WindTurbine : MonoBehaviour
     {
         isActive = true;
         StartCoroutine(RotateCo());
-        AudioManager.PlayWind();
     }
 
     private void Disable()
     {
         isActive = false;
         StopAllCoroutines();
-        AudioManager.StopWind();
     }
 
     private bool State()
