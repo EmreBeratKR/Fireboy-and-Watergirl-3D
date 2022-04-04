@@ -6,6 +6,11 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private AudioContainer audios;
 
 
+    public static float musicVolume { get => PlayerPrefs.GetFloat("MusicVol", 0.5f); set => PlayerPrefs.SetFloat("MusicVol", value); }
+    public static float sfxVolume { get => PlayerPrefs.GetFloat("SFXVol", 0.75f); set => PlayerPrefs.SetFloat("SFXVol", value); }
+
+
+
     public static void StopAllAudios()
     {
         StopMusic();
@@ -180,15 +185,46 @@ public class AudioManager : Singleton<AudioManager>
     private void OnEnable()
     {
         SceneManager.activeSceneChanged += OnSceneChanged;
+        MyEventSystem.OnMusicVolumeSlided += UpdateMusicVolume;
+        MyEventSystem.OnSfxVolumeSlided += UpdateSfxVolume;
     }
 
     private void OnDisable()
     {
         SceneManager.activeSceneChanged -= OnSceneChanged;
+        MyEventSystem.OnMusicVolumeSlided -= UpdateMusicVolume;
+        MyEventSystem.OnSfxVolumeSlided -= UpdateSfxVolume;
     }
 
     private void OnSceneChanged(Scene oldScene, Scene newScene)
     {
         StopAllAudios();
+    }
+
+    private void UpdateMusicVolume(float value)
+    {
+        audios.ost.normal.volume = value;
+        audios.ost.epic.volume = value;
+
+        audios.ost.normalFinish.volume = value;
+        audios.ost.epicFinish.volume = value;
+    }
+
+    private void UpdateSfxVolume(float value)
+    {
+        audios.ost.gameover.volume = value;
+
+        audios.sfx.fireboy.jump.volume = value;
+        audios.sfx.fireboy.death.volume = value;
+        audios.sfx.watergirl.jump.volume = value;
+        audios.sfx.watergirl.death.volume = value;
+
+        audios.sfx.ambiance.doorOpen.volume = value;
+        audios.sfx.ambiance.doorClose.volume = value;
+        audios.sfx.ambiance.gemCollect.volume = value;
+        audios.sfx.ambiance.lever.volume = value;
+        audios.sfx.ambiance.button.volume = value;
+        audios.sfx.ambiance.wind.volume = value;
+        audios.sfx.ambiance.platformMove.volume = value;
     }
 }
