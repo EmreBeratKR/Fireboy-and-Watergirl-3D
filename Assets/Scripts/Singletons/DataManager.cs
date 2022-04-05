@@ -19,6 +19,13 @@ public class DataManager : Scenegleton<DataManager>
             Directory.CreateDirectory(directory);
         }
 
+        if (levelData.levelStatus > 0)
+        {
+            LevelStatus oldStatus = LoadLevelStatus(levelData.levelNumber);
+            
+            if (levelData.levelStatus < oldStatus) return;
+        }
+
         string jsonData = JsonUtility.ToJson(levelData);
 
         string path = directory + levelStatusBaseFileName + levelData.levelNumber + ".json";

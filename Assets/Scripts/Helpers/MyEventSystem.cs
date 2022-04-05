@@ -9,6 +9,8 @@ public static class MyEventSystem
     public static event GenericHandler<float> OnMusicVolumeSlided;
     public static event GenericHandler<float> OnSfxVolumeSlided;
 
+    public static event GenericHandler<bool> OnLevelNumberToggled;
+
     public static event DoubleGenericHandler<int, LevelStatus> OnLevelCompleted;
 
 
@@ -20,6 +22,12 @@ public static class MyEventSystem
     public static void RaiseSfxVolumeSlided(float value)
     {
         OnSfxVolumeSlided?.Invoke(value);
+    }
+
+
+    public static void RaiseLevelNumberToggled(bool isOn)
+    {
+        OnLevelNumberToggled?.Invoke(isOn);
     }
 
 
