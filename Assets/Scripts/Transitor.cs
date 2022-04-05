@@ -16,6 +16,6 @@ public class Transitor : MonoBehaviour
     private IEnumerator RestartLevel()
     {
         yield return new WaitForSeconds(0.1f);
-        PhotonNetwork.LoadLevel(PlayerPrefs.GetInt("Restarted Level", SceneController.levelDelta+1));
+        PhotonNetwork.LoadLevel(PlayerPrefs.GetInt("Restarted Level", LevelManager.levelStart));
     }
 }

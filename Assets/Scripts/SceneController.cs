@@ -20,13 +20,12 @@ public class SceneController : EventListener
     [SerializeField] private Expectation expectations;
     private Spawner spawner;
     private float startTime;
-    public const int levelDelta = 4;
     private const float menuWait = 1.5f;
 
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex > levelDelta)
+        if (SceneManager.GetActiveScene().buildIndex >= LevelManager.levelStart)
         {
             startTime = Time.time;
             spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
@@ -66,11 +65,11 @@ public class SceneController : EventListener
         }
     }
 
-    public void Load_Level(int levelNumber)
+    public void Load_Level(LevelNode levelNode)
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.LoadLevel(levelNumber+levelDelta);
+            PhotonNetwork.LoadLevel(LevelManager.ToSceneIndex(levelNode.levelNumber));
         }
     }
 
@@ -105,8 +104,10 @@ public class SceneController : EventListener
 
         Image timeCheck = resultMembers[0].transform.Find("Check").GetComponent<Image>();
 
-        timeCheck.sprite = timeElapsed <= expectations.time ? resultIcons.tick : resultIcons.cross;
-        timeCheck.color = timeElapsed <= expectations.time ? resultIcons.tickColor : resultIcons.crossColor;
+        bool timeSucceed = timeElapsed <= expectations.time;
+
+        timeCheck.sprite = timeSucceed ? resultIcons.tick : resultIcons.cross;
+        timeCheck.color = timeSucceed ? resultIcons.tickColor : resultIcons.crossColor;
 
         GameObject fireboy = (spawner.Get_Me().GetComponent<CollisionController>().element == Element.Fire) ? spawner.Get_Me() : spawner.Get_Other();
         int fireGemCount = fireboy.GetComponent<PlayerStats>().collectedGems;
@@ -134,6 +135,24 @@ public class SceneController : EventListener
             bool allWaterGemsCollected = (waterGemCount >= expectations.waterGem);
             waterCheck.sprite = allWaterGemsCollected ? resultIcons.tick : resultIcons.cross;
             waterCheck.color = allWaterGemsCollected ? resultIcons.tickColor : resultIcons.crossColor;
+
+            int levelNumber = LevelManager.ToLevelNumber(SceneManager.GetActiveScene().buildIndex);
+            LevelStatus levelStatus = LevelStatus.FullFinished;
+
+            if (!timeSucceed)
+            {
+                levelStatus = LevelStatus.SemiFinished;
+            }
+            else if (!allFireGemsCollected)
+            {
+                levelStatus = LevelStatus.SemiFinished;
+            }
+            else if (!allWaterGemsCollected)
+            {
+                levelStatus = LevelStatus.SemiFinished;
+            }
+
+            MyEventSystem.RaiseLevelCompleted(levelNumber, levelStatus);
         }
         else
         {
@@ -141,6 +160,11 @@ public class SceneController : EventListener
             bool isPureGemCollected = (fireboy.GetComponent<PlayerStats>().isPureGemCollected || watergirl.GetComponent<PlayerStats>().isPureGemCollected);
             bigGemCheck.sprite = isPureGemCollected ? resultIcons.tick : resultIcons.cross;
             bigGemCheck.color = isPureGemCollected ? resultIcons.tickColor : resultIcons.crossColor;
+
+            int levelNumber = LevelManager.ToLevelNumber(SceneManager.GetActiveScene().buildIndex);
+            LevelStatus levelStatus = isPureGemCollected ? LevelStatus.FullFinished : LevelStatus.NotFinished;
+
+            MyEventSystem.RaiseLevelCompleted(levelNumber, levelStatus);
         }
     }
 
