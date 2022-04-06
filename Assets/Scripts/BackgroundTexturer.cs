@@ -5,12 +5,12 @@ using UnityEngine;
 public class BackgroundTexturer : MonoBehaviour
 {
     [SerializeField] private Material material;
-    [SerializeField, Range(0f, 1f)] private float materialScale;
-    private const float textureConstant = 0.075f;
+    [SerializeField, Range(10f, 50f)] private float materialScale;
+    private const float textureConstant = 0.3f;
 
 
-    private void OnEnable() // change this to OnEnable() !!!
+    private void OnValidate()
     {
-        material.mainTextureScale = transform.lossyScale * materialScale * textureConstant;
+        material.mainTextureScale = Vector2.one * materialScale * textureConstant;
     }
 }
