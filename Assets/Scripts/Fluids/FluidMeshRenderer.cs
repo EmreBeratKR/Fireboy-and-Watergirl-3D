@@ -48,7 +48,7 @@ public class FluidMeshRenderer : MonoBehaviour
             Simulate(preview);
         }
 
-        Gizmos.DrawMesh(preview, transform.position, Quaternion.identity, transform.localScale);
+        Gizmos.DrawMesh(preview, transform.position, Quaternion.identity, transform.lossyScale);
     }
     
     private void Simulate(Mesh targetMesh)
