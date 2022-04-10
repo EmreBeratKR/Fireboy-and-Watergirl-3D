@@ -476,7 +476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2913526404663862922, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
       propertyPath: m_Size.y
-      value: 7.6249485
+      value: 11.735667
       objectReference: {fileID: 0}
     - target: {fileID: 2913526404663862922, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
       propertyPath: m_Size.z
@@ -484,7 +484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2913526404663862922, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
       propertyPath: m_Center.y
-      value: 3.8910654
+      value: 5.946428
       objectReference: {fileID: 0}
     - target: {fileID: 5472429709869511368, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
       propertyPath: m_RootOrder
@@ -2703,7 +2703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5994338421513706305, guid: 18af982c3d91e4fdabf6bb98062d55f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.3
+      value: 19.67
       objectReference: {fileID: 0}
     - target: {fileID: 5994338421513706305, guid: 18af982c3d91e4fdabf6bb98062d55f2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2740,6 +2740,10 @@ PrefabInstance:
     - target: {fileID: 5994338421513706306, guid: 18af982c3d91e4fdabf6bb98062d55f2, type: 3}
       propertyPath: m_Name
       value: Seasaw
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311818919097452929, guid: 18af982c3d91e4fdabf6bb98062d55f2, type: 3}
+      propertyPath: sceneViewId
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18af982c3d91e4fdabf6bb98062d55f2, type: 3}
