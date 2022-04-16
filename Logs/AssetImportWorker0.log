@@ -1699,3 +1699,85 @@ Received Import Request.
   path: Assets/Models/Levels/Level 26.fbx
   artifactKey: Guid(5fc090b9fa78445d686851bd2b9d9223) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Models/Levels/Level 26.fbx using Guid(5fc090b9fa78445d686851bd2b9d9223) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0027aaf801094ecc3dee6c746807a2a') in 0.009352 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 92.664930 seconds.
+  path: Assets/Models/Levels/Level 27.fbx
+  artifactKey: Guid(36d88acbbad8941b7b64eabc6b0cc297) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Levels/Level 27.fbx using Guid(36d88acbbad8941b7b64eabc6b0cc297) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3345e89cf087566bd4192eb03d300896') in 0.009170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.444975 seconds.
+  path: Assets/Models/Levels/Level 27.fbx
+  artifactKey: Guid(36d88acbbad8941b7b64eabc6b0cc297) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Levels/Level 27.fbx using Guid(36d88acbbad8941b7b64eabc6b0cc297) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d581c7f3e94196fd6b9e7c4e4bdb8db') in 0.008532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.532098 seconds.
+  path: Assets/Scenes/Levels/Level 26.unity
+  artifactKey: Guid(452df89c2325f44698c0445d93bef8a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/Level 26.unity using Guid(452df89c2325f44698c0445d93bef8a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff34d64897b4c9bc96a0be5a89b22392') in 0.002610 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.636507 seconds.
+  path: Assets/Scenes/Levels/Level 27.unity
+  artifactKey: Guid(42a0ca3e739ff41e89725c6a0da40c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/Level 27.unity using Guid(42a0ca3e739ff41e89725c6a0da40c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4993783c52c83a054a6008100d36ea3') in 0.000895 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002562 seconds.
+Begin MonoManager ReloadAssembly
+Thread 0x16f733000 may have been prematurely finalized
+Symbol file LoadedFromMemory doesn't match image /Users/emreberatkr/Documents/Unity/My Projects/Fireboy-and-Watergirl-3D/Library/PackageCache/com.unity.visualscripting@1.7.5/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/emreberatkr/Documents/Unity/My Projects/Fireboy-and-Watergirl-3D/Library/PackageCache/com.unity.visualscripting@1.7.5/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.733 seconds
+Domain Reload Profiling:
+	ReloadAssembly (734ms)
+		BeginReloadAssembly (83ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (587ms)
+			LoadAssemblies (41ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (206ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (37ms)
+			SetupLoadedEditorAssemblies (272ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (47ms)
+				ProcessInitializeOnLoadAttributes (194ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4420 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 32 unused Assets / (22.7 KB). Loaded Objects now: 4984.
+Memory consumption went from 318.9 MB to 318.8 MB.
+Total: 2.528750 ms (FindLiveObjects: 0.150375 ms CreateObjectMapping: 0.063500 ms MarkObjects: 2.295042 ms  DeleteObjects: 0.018625 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
