@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 56728
+  controlID: 77003
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 56729
+  controlID: 77004
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 56730
+  controlID: 77005
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 558
     height: 829
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -226,7 +226,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 68ffeeff6804efff4e09efff5e0eeffffa12efff4817efff081eefff5024efff8e2aefffda2eefff3035efffea3beffffe40efffce42efff1443efff04a7efff8808f1ff1410f1ffe217f1ff9a1ef1ff0623f1ff5e29f1ff722ef1ffca34f1fff636f1ffb2dbf2ff86e3f2ff3eeaf2ff9aeef2fff0f4f2ff18f7f2ff86fdf2ffdcfdf2ff6009f3ffbc0ff3ff2a18f3ff828df3ff1c96f3ff269ff3ff96bdf3ff30bef3ffaac5f3ffd812f4ff281bf4ff2823f4ff1a28f4ffac2ef4ff0c33f4ffc038f4ff263ef4ff1444f4fffc49f4ff7451f4ff2c58f4ff925df4ff8063f4ff6a69f4ffe270f4ffc272f4ffcc1cfffff821ffff0826ffff4c8cffffc693ffff9cd2ffff94dbffff2ce3ffffd4eaffff06f5ffff02fbffff32760000deff0000f6ff0000fa0701001208010070190100ca1a0100fe2101001a2201004a290100323201004a320100e4320100223b0100
+      m_ExpandedIDs: fc05e5ffde79ebffb47febffde84ebff7a89ebffb88debff0694ebffc69aebff269debff68ffeeff6804efff4e09efff5e0eeffffa12efff4817efff081eefff5024efff8e2aefffda2eefff3035efffea3beffffe40efffce42efff1443efff04a7efff8808f1ff1410f1ffe217f1ff9a1ef1ff0623f1ff5e29f1ff722ef1ffca34f1fff636f1ffb2dbf2ff86e3f2ff3eeaf2ff9aeef2fff0f4f2ff18f7f2ff86fdf2ffdcfdf2ff6009f3ffbc0ff3ff2a18f3ff828df3ff1c96f3ff269ff3ff96bdf3ff30bef3ffaac5f3ffd812f4ff281bf4ff2823f4ff1a28f4ffac2ef4ff0c33f4ffc038f4ff263ef4ff1444f4fffc49f4ff7451f4ff2c58f4ff925df4ff8063f4ff6a69f4ffe270f4ffc272f4ffcc1cfffff821ffff0826ffff4c8cffffc693ffff9cd2ffff94dbffff2ce3ffffd4eaffff06f5ffff02fbffff32760000deff0000f6ff0000fa0701001208010070190100ca1a0100fe2101001a2201004a290100323201004a320100e4320100223b010050880100588801009aa90100daa90100f2a90100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 22.480518, y: -4.649417, z: 3.7443075}
+    m_Target: {x: -4.9989533, y: -27.487555, z: -4.743346}
     speed: 2
-    m_Value: {x: 22.480518, y: -4.649417, z: 3.7443075}
+    m_Value: {x: -4.9989533, y: -27.487555, z: -4.743346}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -576,11 +576,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 0.99999994}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 132.29596
+    m_Target: 95.462845
     speed: 2
-    m_Value: 132.29596
+    m_Value: 95.462845
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 56620
+  controlID: 76889
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1093,22 +1093,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Level 27
-      m_OriginalName: Level 27
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 100328
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 16}
     m_CreateAssetUtility:
@@ -1118,7 +1118,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 254}
+    m_ScrollPosition: {x: 0, y: 270}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 136
