@@ -144,6 +144,8 @@ public class CollisionController : EventListener
         if (id == photonView.ViewID)
         {
             sceneController.Open_GameoverScreen();
+            
+            ParticleManager.EmitDieParticle(transform.position, this.element);
             Destroy(gameObject);
 
             AudioManager.StopMusic();
