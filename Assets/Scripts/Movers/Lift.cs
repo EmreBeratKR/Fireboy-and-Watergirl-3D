@@ -90,5 +90,5 @@ public class Lift : MonoBehaviour
     }
 }
 
-public enum SwitchMode {One, All}
+public enum SwitchMode {One, All, Always}
 public enum MotionMode {Move, Rotate}

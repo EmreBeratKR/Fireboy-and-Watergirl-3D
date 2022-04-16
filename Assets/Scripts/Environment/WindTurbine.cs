@@ -78,6 +78,8 @@ public class WindTurbine : MonoBehaviour
 
     private bool State()
     {
+        if (mode == SwitchMode.Always) return true;
+        
         if (mode == SwitchMode.One)
         {
             for (int i = 0; i < switches.Length; i++)
