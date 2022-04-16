@@ -1536,6 +1536,14 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 3.9918833
       objectReference: {fileID: 0}
+    - target: {fileID: 3858550283969297217, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
+      propertyPath: switches.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3858550283969297217, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
+      propertyPath: switches.Array.data[0]
+      value: 
+      objectReference: {fileID: 562622144}
     - target: {fileID: 5472429709869511368, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2303,6 +2311,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 3858550283969297217, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
+      propertyPath: rotationAxis
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3858550283969297217, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
+      propertyPath: switches.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3858550283969297217, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
+      propertyPath: switches.Array.data[0]
+      value: 
+      objectReference: {fileID: 333977529}
     - target: {fileID: 4537338542356947945, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -2450,6 +2470,14 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 5.499159
       objectReference: {fileID: 0}
+    - target: {fileID: 3858550283969297217, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
+      propertyPath: switches.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3858550283969297217, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
+      propertyPath: switches.Array.data[0]
+      value: 
+      objectReference: {fileID: 703744547}
     - target: {fileID: 5472429709869511368, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -108,15 +108,79 @@ Transform:
   m_GameObject: {fileID: 728827448972030723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.857932, y: 4.857932, z: 4.857932}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3601306250195929302}
   - {fileID: 473474892144168504}
   - {fileID: 8335099526271527385}
   m_Father: {fileID: 5472429709869511368}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &864517566113189284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2292226903456583184}
+  - component: {fileID: 3858550283969297217}
+  - component: {fileID: 1400056759227699495}
+  m_Layer: 0
+  m_Name: Pusher
+  m_TagString: Wind Zone
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2292226903456583184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864517566113189284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5472429709869511368}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3858550283969297217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864517566113189284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2ae762b21334752ab496c7586d11ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blades: {fileID: 3601306250195929302}
+  switches: []
+  mode: 0
+  windForce: 10
+  isActive: 0
+  rotationAxis: 1
+--- !u!65 &1400056759227699495
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864517566113189284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.593962, y: 59.03405, z: 17.92577}
+  m_Center: {x: 0, y: 29.517033, z: 0}
 --- !u!1 &992866529315906541
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,11 +939,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5472429709869511368}
-  - component: {fileID: 9006637590008479101}
-  - component: {fileID: 2913526404663862922}
   m_Layer: 0
   m_Name: Wind Turbine
-  m_TagString: Wind Zone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,44 +955,15 @@ Transform:
   m_GameObject: {fileID: 5685643643384020763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.8579316, y: 4.8579316, z: 4.8579316}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2292226903456583184}
   - {fileID: 2926346822693720169}
+  - {fileID: 2216457766941308898}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9006637590008479101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5685643643384020763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec2ae762b21334752ab496c7586d11ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blades: {fileID: 3601306250195929302}
-  switches: []
-  mode: 0
-  windForce: 5
-  isActive: 0
-  rotationAxis: 1
---- !u!65 &2913526404663862922
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5685643643384020763}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.21, y: 3.3216288, z: 3.69}
-  m_Center: {x: 0, y: 1.7394053, z: 0}
 --- !u!1 &5864313150341968094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,3 +1211,73 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8634338456207152865, guid: 0f83b83516f47473aade892177fbbe8c, type: 3}
+--- !u!1001 &434756950028895262
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5472429709869511368}
+    m_Modifications:
+    - target: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933327103570970381, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: m_Name
+      value: Wind Particle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089683014466191586, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: bound
+      value: 
+      objectReference: {fileID: 1400056759227699495}
+    - target: {fileID: 7089683014466191586, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+      propertyPath: windTurbine
+      value: 
+      objectReference: {fileID: 3858550283969297217}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+--- !u!4 &2216457766941308898 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1786488399778804732, guid: 27315ece86fb640b8b18fbaf1159e457, type: 3}
+  m_PrefabInstance: {fileID: 434756950028895262}
+  m_PrefabAsset: {fileID: 0}

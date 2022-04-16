@@ -13,6 +13,8 @@ public class WindTurbine : MonoBehaviour
     private bool isMakeNoise = false;
 
 
+    public bool IsActive => isActive;
+    
     private void Start()
     {
         if (isActive)

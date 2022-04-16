@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 11478
+  controlID: 36444
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 11479
+  controlID: 36445
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 11480
+  controlID: 36446
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e6aefbff96e5fbff3cebfbff1c18fcff02fbffff
+      m_ExpandedIDs: 6c20f5ffba29f5ffac49f5fffe50f5ff5457f5ffc666f5ff8a77f5ff748ef5ff1498f5ff269af5fff89ff5ff42a5f5fff6aaf5ff48aff5ffeeb5f5ff4acaf5ffa6caf5ff26d1f5ffbed5f5ffecd9f5ff1cdff5ff78e5f5ffcaeaf5ff6eeff5ffdef3f5ffb0faf5ff2402f6ff7a0af6ffa232f6ffda35f6ff283cf6ff3844f6ff3445f6ffe251f6ff5c53f6ff4c9ff6ffc6a0f6ff0ca7f6ffac2ff7fff234f7ff7439f7ff706ef7ffac70f7ffa871f7fff077f7ff5aaff7ff56b0f7ff680ff8ffa012f8ffdc18f8ff9e35f8ff9a36f8ff8a8cf8ffc68ef8ffc28ff8ff82ebf8ffc4f1f8ffce50f9ffca51f9ffc65af9ff387bfaff347cfaff5c9dfaff1612fbff1213fbffb888fdff4ea0fdff06faffff02fbffffbe6600001667000090d70000d4d70000e8d70000bee0000016e10000cc0101001002010024020100c4030100040401001c0401005a2201006e220100742c0100b42c0100b82c0100cc2c0100e22d0100222e01003a2e0100c83c0100dc3c0100b03d0100083e0100626b0100a66b0100ba6b010086700100cc700100ec70010080c40100e6c4010092c50100f8c50100dec7010036c8010050cf010094cf0100a8cf01005edb010076db010092db010096e20100a6e20100aee2010016eb010022eb010026eb0100f40002000a010200481102005c1102008c2f0200e42f020000300200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -242,7 +242,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 5}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -274,9 +274,9 @@ MonoBehaviour:
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 8}
-  - {fileID: 9}
   - {fileID: 2}
-  m_Selected: 2
+  - {fileID: 9}
+  m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.1205223, y: 3.325442, z: -4.736292}
+    m_Target: {x: 8.088652, y: -0.039523184, z: 0.71407795}
     speed: 2
-    m_Value: {x: 3.1205223, y: 3.325442, z: -4.736292}
+    m_Value: {x: 8.088652, y: -0.039523184, z: 0.71407795}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,9 +578,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 126.068146
+    m_Target: 87.148766
     speed: 2
-    m_Value: 126.068146
+    m_Value: 87.148766
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -737,22 +737,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Particles
+    - Assets/Resources/Environment/Physicals
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Resources/Particles
+  - Assets/Resources/Environment/Physicals
   m_LastFoldersGridSize: 96
   m_LastProjectPath: /Users/emreberatkr/Documents/Unity/My Projects/Fireboy-and-Watergirl-3D
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: d6710000
-    m_LastClickedID: 29142
-    m_ExpandedIDs: 000000001e6c0000206c0000226c0000806c0000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: cc9b0000
+    m_LastClickedID: 39884
+    m_ExpandedIDs: 00000000986c00009a6c00009c6c00000e6d0000be9b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -780,7 +780,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e6c0000206c0000226c0000
+    m_ExpandedIDs: 00000000986c00009a6c00009c6c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -807,7 +807,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -824,7 +824,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 11418
+  controlID: 36385
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1023,22 +1023,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scenes/Levels
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scenes/Levels
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/emreberatkr/Documents/Unity/My Projects/Fireboy-and-Watergirl-3D
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 206c0000
-    m_LastClickedID: 27680
-    m_ExpandedIDs: 000000001e6c0000206c0000226c0000
+    m_SelectedIDs: 9c6c0000
+    m_LastClickedID: 27804
+    m_ExpandedIDs: 00000000986c00009a6c00009c6c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1066,7 +1066,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e6c0000206c0000226c0000
+    m_ExpandedIDs: 00000000986c00009a6c00009c6c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1118,7 +1118,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 334}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 136

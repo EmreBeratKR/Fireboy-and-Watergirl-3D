@@ -486,6 +486,18 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 5.946428
       objectReference: {fileID: 0}
+    - target: {fileID: 3858550283969297217, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
+      propertyPath: switches.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3858550283969297217, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
+      propertyPath: switches.Array.data[0]
+      value: 
+      objectReference: {fileID: 305887581}
+    - target: {fileID: 3858550283969297217, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
+      propertyPath: switches.Array.data[1]
+      value: 
+      objectReference: {fileID: 1570560953}
     - target: {fileID: 5472429709869511368, guid: 27b916ae427a84f1989ad5a8ba5b29e3, type: 3}
       propertyPath: m_RootOrder
       value: 0
