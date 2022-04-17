@@ -1,28 +1,32 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(ParticleSystem))]
 public class SubWindParticle : MonoBehaviour
-{
-    private new ParticleSystem particleSystem;
-    
+{    
+    private TrailRenderer trailRenderer;
     public Vector3 velocity;
+
 
     private void Start()
     {
-        particleSystem = this.GetComponent<ParticleSystem>();
+        trailRenderer = this.GetComponent<TrailRenderer>();
     }
 
     private void Update()
     {
         transform.localPosition += velocity * Time.deltaTime;
+
+        Shrink();
     }
 
-
-    public void Randomize()
+    public void Clear()
     {
-        var main = particleSystem.main;
+        trailRenderer.Clear();
+        trailRenderer.widthMultiplier = 1;
+    }
 
-        main.startSize = Random.Range(0.2f, 1f);
+    public void Shrink()
+    {
+        trailRenderer.widthMultiplier -= 1f * Time.deltaTime;
     }
 }

@@ -10,6 +10,7 @@ public class WindParticle : MonoBehaviour
     public Vector2 deltaVelocityRangeX;
     public Vector2 deltaVelocityRangeY;
     public Vector2 initialSpeedRangeY;
+    public int subParticleCount;
 
     private bool isStarted = false;
     
@@ -25,8 +26,9 @@ public class WindParticle : MonoBehaviour
 
     private Vector3 randomInitialPosition
     {
-        get => new Vector3(Random.Range(leftBorder, rightBorder), Random.Range(bottomBorder, topBorder), 0);
+        get => new Vector3(Random.Range(leftBorder, rightBorder), bottomBorder, 0);
     }
+    
 
     private void Update()
     {
@@ -37,11 +39,10 @@ public class WindParticle : MonoBehaviour
     {
         foreach (var subParticle in subParticles)
         {
-            subParticle.gameObject.SetActive(false);
-            subParticle.Randomize();
+            //subParticle.Randomize();
             subParticle.transform.localPosition = randomInitialPosition;
             subParticle.velocity = randomInitialVelocity;
-            subParticle.gameObject.SetActive(true);
+            subParticle.Clear();
         }
 
         isStarted = true;
@@ -53,7 +54,7 @@ public class WindParticle : MonoBehaviour
         {
             subParticle.transform.localPosition = randomInitialPosition;
             subParticle.velocity = Vector3.zero;
-            subParticle.gameObject.SetActive(false);
+            subParticle.Clear();
         }
 
         isStarted = false;
@@ -83,24 +84,24 @@ public class WindParticle : MonoBehaviour
 
             var newVelocity = subParticle.velocity + new Vector3(deltaX, deltaY, 0);
 
-            if (newVelocity.x < 0)
+            if (newVelocity.y < 0)
             {
-                newVelocity.x = 0;
+                newVelocity.y = 0;
             }
 
             subParticle.velocity = newVelocity;
 
             var lastPosition = subParticle.transform.localPosition;
             
+
+            bool isResetted = false;
+
             if (lastPosition.y > topBorder)
             {
-                subParticle.gameObject.SetActive(false);
-                
-                subParticle.Randomize();
+                //subParticle.Randomize();
                 lastPosition = randomInitialPosition;
                 subParticle.velocity = randomInitialVelocity;
-                
-                subParticle.gameObject.SetActive(true);
+                isResetted = true;
             }
 
             if (lastPosition.x > rightBorder)
@@ -117,6 +118,8 @@ public class WindParticle : MonoBehaviour
             }
 
             subParticle.transform.localPosition = lastPosition;
+            
+            if (isResetted) subParticle.Clear();
         }
     }   
 }
