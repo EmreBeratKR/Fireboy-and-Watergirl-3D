@@ -504,3 +504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 9083788944703045289}
   playerMovement: {fileID: 3018737931988820822}
+  idle: isIdle
+  run: isRun
+  push: isPush
+  floating: isFloat

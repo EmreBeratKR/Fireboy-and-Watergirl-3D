@@ -1,11 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField, AnimatorParam("animator")] private string idle;
+    [SerializeField, AnimatorParam("animator")] private string run;
+    [SerializeField, AnimatorParam("animator")] private string push;
+    [SerializeField, AnimatorParam("animator")] private string floating;
 
 
     private void Update()
@@ -18,16 +21,28 @@ public class PlayerAnimation : MonoBehaviour
         switch (playerMovement.state)
         {
             case PlayerState.Idle:
-                animator.Play("Character_Idle");
+                animator.SetBool(idle, true);
+                animator.SetBool(run, false);
+                animator.SetBool(push, false);
+                animator.SetBool(floating, false);
                 break;
             case PlayerState.Run:
-                animator.Play("Character_Run");
+                animator.SetBool(idle, false);
+                animator.SetBool(run, true);
+                animator.SetBool(push, false);
+                animator.SetBool(floating, false);
                 break;
             case PlayerState.Push:
-                animator.Play("Character_Push");
+                animator.SetBool(idle, false);
+                animator.SetBool(run, false);
+                animator.SetBool(push, true);
+                animator.SetBool(floating, false);
                 break;
             case PlayerState.Float:
-                animator.Play("Character_Float");
+                animator.SetBool(idle, false);
+                animator.SetBool(run, false);
+                animator.SetBool(push, false);
+                animator.SetBool(floating, true);
                 break;
         }
     }

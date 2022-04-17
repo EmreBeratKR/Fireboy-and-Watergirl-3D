@@ -1989,6 +1989,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2619026451976840667}
   playerMovement: {fileID: 1274229814196533740}
+  idle: isIdle
+  run: isRun
+  push: isPush
+  floating: isFloat
 --- !u!1 &6673338372320145268
 GameObject:
   m_ObjectHideFlags: 0
