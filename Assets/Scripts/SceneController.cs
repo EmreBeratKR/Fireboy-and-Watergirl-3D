@@ -50,6 +50,11 @@ public class SceneController : EventListener
         SceneManager.LoadScene(1);
     }
 
+    public void LoadWaitingRoom()
+    {
+        PhotonNetwork.LoadLevel(2); // Waiting Room Scene
+    }
+
     public void LoadLevelSelection()
     {
         if (PhotonNetwork.IsMasterClient)

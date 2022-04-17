@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
@@ -52,6 +51,12 @@ public class RoomController : MonoBehaviourPunCallbacks
         UpdatePlayerCounter();
     }
 
+    public void OnRoleSwitched()
+    {
+        UpdatePlayerList();
+        UpdatePlayerCounter();
+    }
+
     private IEnumerator UpdateTable(Player newPlayer)
     {
         while (true)
@@ -90,6 +95,18 @@ public class RoomController : MonoBehaviourPunCallbacks
                     {
                         newDisplay.transform.Find("Kick Button").gameObject.SetActive(false);
                     }
+
+
+                    var masterRole = RoleSwitcher.MasterRole;
+
+                    if (players[i].IsMasterClient)
+                    {
+                        newDisplay.GetComponent<Image>().color = RoleSwitcher.RoleColor(masterRole);
+                    }
+                    else
+                    {
+                        newDisplay.GetComponent<Image>().color = RoleSwitcher.RoleColor(RoleSwitcher.OppositeRole(masterRole));
+                    }
                 }
             }
             else
@@ -108,6 +125,17 @@ public class RoomController : MonoBehaviourPunCallbacks
                     else
                     {
                         newDisplay.transform.Find("Kick Button").gameObject.SetActive(false);
+                    }
+
+                    var masterRole = RoleSwitcher.MasterRole;
+
+                    if (players[i].IsMasterClient)
+                    {
+                        newDisplay.GetComponent<Image>().color = RoleSwitcher.RoleColor(masterRole);
+                    }
+                    else
+                    {
+                        newDisplay.GetComponent<Image>().color = RoleSwitcher.RoleColor(RoleSwitcher.OppositeRole(masterRole));
                     }
                 }
             }

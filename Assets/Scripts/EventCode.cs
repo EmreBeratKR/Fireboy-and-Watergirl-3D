@@ -1,4 +1,4 @@
-public class EventCode
+public static class EventCode
 {
     public const byte _MOVEINPUT_EVENTCODE = 0;
     public const byte _GEMCOLLECT_EVENTCODE = 1;
@@ -8,4 +8,5 @@ public class EventCode
     public const byte _GAMEOVER_EVENTCODE = 5;
     public const byte _ELEVATOR_EVENTCODE = 6;
     public const byte _CHATMSG_EVENTCODE = 7;
+    public const byte _ROLESWITCHED_EVENTCODE = 8;
 }

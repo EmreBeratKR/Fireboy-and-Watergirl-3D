@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
@@ -14,11 +12,25 @@ public class Spawner : MonoBehaviour
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.Instantiate("Fireboy", spawnPoints[0].position, Quaternion.identity);
+            if (RoleSwitcher.MasterRole == Role.Fireboy)
+            {
+                PhotonNetwork.Instantiate("Fireboy", spawnPoints[0].position, Quaternion.identity);
+            }
+            else
+            {
+                PhotonNetwork.Instantiate("Watergirl", spawnPoints[1].position, Quaternion.identity);
+            }
         }
         else
         {
-            PhotonNetwork.Instantiate("Watergirl", spawnPoints[1].position, Quaternion.identity);
+            if (RoleSwitcher.MasterRole == Role.Fireboy)
+            {
+                PhotonNetwork.Instantiate("Watergirl", spawnPoints[1].position, Quaternion.identity);
+            }
+            else
+            {
+                PhotonNetwork.Instantiate("Fireboy", spawnPoints[0].position, Quaternion.identity);
+            }
         }
     }
 
