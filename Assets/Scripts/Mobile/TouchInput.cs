@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class TouchInput : Scenegleton<TouchInput>
 {
     private bool isRight;

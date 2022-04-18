@@ -231,6 +231,14 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
+        m_Calls: []
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 263192023656110325}
           m_TargetAssemblyTypeName: TouchInput, Assembly-CSharp
@@ -256,7 +264,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 1
+  - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -735,6 +743,14 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
+        m_Calls: []
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 263192023656110325}
           m_TargetAssemblyTypeName: TouchInput, Assembly-CSharp
@@ -760,7 +776,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 1
+  - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -5357,6 +5373,14 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
+        m_Calls: []
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 263192023656110325}
           m_TargetAssemblyTypeName: TouchInput, Assembly-CSharp
@@ -5382,7 +5406,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 1
+  - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -5555,6 +5579,14 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
+        m_Calls: []
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 263192023656110325}
           m_TargetAssemblyTypeName: TouchInput, Assembly-CSharp
@@ -5580,7 +5612,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 1
+  - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:

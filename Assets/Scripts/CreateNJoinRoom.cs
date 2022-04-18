@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
@@ -8,8 +7,8 @@ using Photon.Realtime;
 
 public class CreateNJoinRoom : MonoBehaviourPunCallbacks
 {
-    public InputField roomInput;
-    public InputField nameInput;
+    public TMP_InputField roomInput;
+    public TMP_InputField nameInput;
     [SerializeField] Text warningText;
     [SerializeField, Range(10, 20)] private int maxLength;
     [SerializeField] private string[] defaultNicknames;
@@ -23,10 +22,10 @@ public class CreateNJoinRoom : MonoBehaviourPunCallbacks
     private void setInputField()
     {
         roomInput.characterLimit = maxLength;
-        roomInput.characterValidation = InputField.CharacterValidation.Alphanumeric;
+        roomInput.characterValidation = TMP_InputField.CharacterValidation.Alphanumeric;
 
         nameInput.characterLimit = maxLength;
-        nameInput.characterValidation = InputField.CharacterValidation.Alphanumeric;
+        nameInput.characterValidation = TMP_InputField.CharacterValidation.Alphanumeric;
     }
 
 
