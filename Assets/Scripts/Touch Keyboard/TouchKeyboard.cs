@@ -114,11 +114,15 @@ public class TouchKeyboard : Singleton<TouchKeyboard>
 
     public static void Show()
     {
+        if (Instance == null) return;
+
         Instance.mainGameObject.SetActive(true);
     }
 
     public static void Hide()
     {
+        if (Instance == null) return;
+
         Instance.mainGameObject.SetActive(false);
     }
 }

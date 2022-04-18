@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 7942826063568052944}
   - component: {fileID: 7942826063568052947}
   - component: {fileID: 7942826063568052951}
+  - component: {fileID: 3672185501095138404}
   m_Layer: 5
   m_Name: Touch Keyboard Canvas
   m_TagString: Untagged
@@ -443,6 +444,18 @@ MonoBehaviour:
   - {fileID: 7942826062749932584}
   mainGameObject: {fileID: 7942826062618197558}
   shiftKey: {fileID: 7942826064018794552}
+--- !u!114 &3672185501095138404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7942826063568052946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24b2bd542f4e04bfa8ee1c033be21960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7942826063618529696
 GameObject:
   m_ObjectHideFlags: 0
