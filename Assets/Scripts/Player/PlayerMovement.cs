@@ -50,9 +50,9 @@ public class PlayerMovement : EventListener
 
     private void GetInput()
     {
-        isRight = (Input.GetKey(keyBinding.right[0]) || Input.GetKey(keyBinding.right[1])) && !isLocked && !isChatting;
-        isLeft = (Input.GetKey(keyBinding.left[0]) || Input.GetKey(keyBinding.left[1])) && !isLocked && !isChatting;
-        isJump = (Input.GetKey(keyBinding.jump[0]) || Input.GetKey(keyBinding.jump[1])) && !isLocked && !isChatting;
+        isRight = (Input.GetKey(keyBinding.right[0]) || Input.GetKey(keyBinding.right[1]) || TouchInput.IsRight) && !isLocked && !isChatting;
+        isLeft = (Input.GetKey(keyBinding.left[0]) || Input.GetKey(keyBinding.left[1]) || TouchInput.IsLeft) && !isLocked && !isChatting;
+        isJump = (Input.GetKey(keyBinding.jump[0]) || Input.GetKey(keyBinding.jump[1]) || TouchInput.IsJump) && !isLocked && !isChatting;
     }
 
     private void TryJump()

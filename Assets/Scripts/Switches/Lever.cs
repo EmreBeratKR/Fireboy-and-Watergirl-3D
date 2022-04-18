@@ -11,6 +11,8 @@ public class Lever : Switch
     private bool isMoving = false;
     private const float duration = 1f;
 
+    private bool isPull => Input.GetKeyDown(KeyCode.Space) || TouchInput.IsPull;
+
 
     private void Start()
     {
@@ -19,7 +21,7 @@ public class Lever : Switch
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isMoving && inRange)
+        if (isPull && !isMoving && inRange)
         {
             Raise_LeverEvent();
         }
