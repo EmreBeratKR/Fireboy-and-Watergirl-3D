@@ -34,14 +34,16 @@ public class ChatBox : EventListener
         }
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         MobileOnlyEventSystem.OnChatButtonPressed += OnChatButtonPressed;
         MobileOnlyEventSystem.OnEnterTouchKeyPressed += OnEnterTouchKeyPressed;
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
+        base.OnDisable();
         MobileOnlyEventSystem.OnChatButtonPressed -= OnChatButtonPressed;
         MobileOnlyEventSystem.OnEnterTouchKeyPressed -= OnEnterTouchKeyPressed;
     }
@@ -83,6 +85,8 @@ public class ChatBox : EventListener
 
     private void OnChatButtonPressed()
     {
+        if (!view.IsMine) return;
+
         isWriting = !isWriting;
         view.GetComponent<PlayerMovement>().isChatting = isWriting;
 
@@ -97,6 +101,8 @@ public class ChatBox : EventListener
 
     private void OnEnterTouchKeyPressed()
     {
+        if (!view.IsMine) return;
+
         SubmitWriting();
     }
 
@@ -113,7 +119,7 @@ public class ChatBox : EventListener
     {
         isWriting = false;
         view.GetComponent<PlayerMovement>().isChatting = false;
-        
+
         TouchKeyboard.Hide();
 
         if (chatbox.text != "")
