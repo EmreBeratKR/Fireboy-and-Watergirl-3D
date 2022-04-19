@@ -2340,6 +2340,26 @@ PrefabInstance:
       propertyPath: expectations.waterGem
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2466252180544798347, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466252180544798347, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466252180544798347, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3086054535012525383, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3086054535012525383, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3388254981750782715, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2427,6 +2447,26 @@ PrefabInstance:
     - target: {fileID: 3388254981750782719, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
       propertyPath: m_Name
       value: In Game Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956632311489400091, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956632311489400091, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970638537734759594, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970638537734759594, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970638537734759594, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e631271c870d43e1af66ff0be013d7c, type: 3}
