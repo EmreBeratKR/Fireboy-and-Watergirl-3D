@@ -7,10 +7,14 @@ public class TouchKeyboard : Singleton<TouchKeyboard>
 {
     [SerializeField] private Transform[] characterKeyParents;
     [SerializeField] private GameObject mainGameObject;
+    [SerializeField] private TextMeshProUGUI contentHolder;
     [SerializeField] private ShiftFunctionalKey shiftKey;
+    [SerializeField] private float caretInterval;
     private List<CharacterTouchKey> characterTouchKeys;
     private EventSystem eventSystem;
-    private TMP_InputField lastFocusedInputField;
+    private TouchKeyboardTarget lastFocus;
+    private float caretTimer;
+    private bool showCaret;
 
 
     public static EventSystem CurrentEventSystem
@@ -29,12 +33,17 @@ public class TouchKeyboard : Singleton<TouchKeyboard>
 
     private void Start()
     {
+        caretTimer = 0;
+        showCaret = true;
+        
         CacheCharacterKeys();
     }
 
     private void Update()
     {
         CheckFocus();
+        UpdateCaretState();
+        UpdateFocusContent();
     }
 
     private void CacheCharacterKeys()
@@ -63,37 +72,67 @@ public class TouchKeyboard : Singleton<TouchKeyboard>
 
         if (focus == null) return;
 
-        if (focus.TryGetComponent(out TMP_InputField inputField))
+        if (focus.TryGetComponent(out TouchKeyboardTarget inputField))
         {
-            lastFocusedInputField = inputField;
+            lastFocus = inputField;
         }
+    }
+
+    private void UpdateFocusContent()
+    {
+        var caret = showCaret ? "<color=#c0c0c0ff>|</color>" : "";
+
+        var focus = lastFocus;
+
+        if (focus == null)
+        {
+            contentHolder.text = caret;
+            return;
+        }
+
+        contentHolder.text = focus.Content + caret;
+    }
+
+    private void UpdateCaretState()
+    {
+        caretTimer += Time.deltaTime;
+
+        if (caretTimer >= caretInterval)
+        {
+            caretTimer = 0;
+            showCaret = !showCaret;
+        }
+    }
+
+    private static void ResetCaretInterval()
+    {
+        Instance.caretTimer = 0;
+        Instance.showCaret = true;
     }
 
 
     public static void AppendChar(char input)
     {
-        if (!char.IsLetterOrDigit(input)) return;
-
-        var focus = Instance.lastFocusedInputField;
+        var focus = Instance.lastFocus;
 
         if (focus == null) return;
 
-        if (focus.text.Length >= focus.characterLimit) return;
+        if (!focus.TryAppendChar(input)) return;
 
-        focus.text += input;
+        ResetCaretInterval();
 
         Instance.shiftKey.OnCharAppended();
     }
 
     public static void RemoveChar()
     {
-        var focus = Instance.lastFocusedInputField;
+        var focus = Instance.lastFocus;
 
         if (focus == null) return;
 
-        if (focus.text.Length == 0) return;
+        if (!focus.TryRemoveChar()) return;
 
-        focus.text = focus.text.Substring(0, focus.text.Length-1);
+        ResetCaretInterval();
     }
 
     public static void AllUpper()

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Photon.Pun;
@@ -36,6 +34,18 @@ public class ChatBox : EventListener
         }
     }
 
+    private void OnEnable()
+    {
+        MobileOnlyEventSystem.OnChatButtonPressed += OnChatButtonPressed;
+        MobileOnlyEventSystem.OnEnterTouchKeyPressed += OnEnterTouchKeyPressed;
+    }
+
+    private void OnDisable()
+    {
+        MobileOnlyEventSystem.OnChatButtonPressed -= OnChatButtonPressed;
+        MobileOnlyEventSystem.OnEnterTouchKeyPressed -= OnEnterTouchKeyPressed;
+    }
+
     private void Update()
     {
         if (view.IsMine)
@@ -69,6 +79,59 @@ public class ChatBox : EventListener
         }
 
         TrySelfHide();
+    }
+
+    private void OnChatButtonPressed()
+    {
+        isWriting = !isWriting;
+        view.GetComponent<PlayerMovement>().isChatting = isWriting;
+
+        if (isWriting)
+        {
+            StartWriting();
+            return;
+        }
+
+        CancelWriting();
+    }
+
+    private void OnEnterTouchKeyPressed()
+    {
+        SubmitWriting();
+    }
+
+    private void StartWriting()
+    {
+        ShowChatBox();
+        chatbox.ActivateInputField();
+        chatbox.text = "";
+
+        TouchKeyboard.Show();
+    }
+
+    private void SubmitWriting()
+    {
+        isWriting = false;
+        view.GetComponent<PlayerMovement>().isChatting = false;
+        
+        TouchKeyboard.Hide();
+
+        if (chatbox.text != "")
+        {
+            Raise_ChatEvent(chatbox.text);
+            return;
+        }
+
+        CancelWriting();   
+    }
+
+    private void CancelWriting()
+    {
+        HideChatBox();
+        chatbox.readOnly = true;
+        chatbox.interactable = false;
+
+        TouchKeyboard.Hide();
     }
 
     private void ShowChatBox()

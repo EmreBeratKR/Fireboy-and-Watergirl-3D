@@ -6,6 +6,8 @@ public class EnterFunctionalKey : FunctionalTouchKey
 
     public override void OnPressed()
     {
+        MobileOnlyEventSystem.RaiseEnterTouchKeyPressed();
+
         TouchKeyboard.Hide();
     }
 }

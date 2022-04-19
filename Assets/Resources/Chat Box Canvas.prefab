@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 3040308401311011523}
   - component: {fileID: 4713823176287042762}
   - component: {fileID: 2682807736545132447}
+  - component: {fileID: 3344666396308113988}
   m_Layer: 5
   m_Name: Chat Box
   m_TagString: Untagged
@@ -320,6 +321,23 @@ MonoBehaviour:
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 4
   m_InputValidator: {fileID: 0}
+--- !u!114 &3344666396308113988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018107472577060176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cb46059b6ae43cbb887f1c3ef9dc11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validation:
+    allowLetter: 1
+    allowDigit: 1
+    allowSpace: 1
+    allowPunctuation: 1
 --- !u!1 &2365724726137908163
 GameObject:
   m_ObjectHideFlags: 0
